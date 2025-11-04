@@ -1,0 +1,312 @@
+[gd_scene load_steps=13 format=3 uid="uid://byl8y7edxwee2"]
+
+[ext_resource type="Script" uid="uid://rlls30862rht" path="res://script/player.gd" id="1_xo3ru"]
+[ext_resource type="Texture2D" uid="uid://i5o04onixrx" path="res://sprite/player/symbol platforme.png" id="2_fvtld"]
+[ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/niv_1/lumiere_godot.jpeg" id="2_hjaqi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
+radius = 20.0
+height = 62.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xo3ru"]
+radius = 27.0
+height = 74.0
+
+[sub_resource type="Animation" id="Animation_fvtld"]
+resource_name = "0"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/SymbolPlatforme:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxContainer/SymbolPlatforme2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BoxContainer/SymbolPlatforme3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ct4mp"]
+resource_name = "1"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/SymbolPlatforme:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxContainer/SymbolPlatforme2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BoxContainer/SymbolPlatforme3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_s4jxa"]
+resource_name = "2"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/SymbolPlatforme:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxContainer/SymbolPlatforme2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BoxContainer/SymbolPlatforme3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_oh5ij"]
+resource_name = "3"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/SymbolPlatforme3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxContainer/SymbolPlatforme2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BoxContainer/SymbolPlatforme:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hp4bs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer/SymbolPlatforme:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxContainer/SymbolPlatforme2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BoxContainer/SymbolPlatforme3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g2vtq"]
+_data = {
+&"0": SubResource("Animation_fvtld"),
+&"1": SubResource("Animation_ct4mp"),
+&"2": SubResource("Animation_s4jxa"),
+&"3": SubResource("Animation_oh5ij"),
+&"RESET": SubResource("Animation_hp4bs")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xo3ru"]
+polygon = PackedVector2Array(20, -31, 20, 31, -20, 31, -20, -31)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_xo3ru")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = 31.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_hjaqi")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-20, -31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, 31)
+shape = SubResource("CapsuleShape2D_xo3ru")
+
+[node name="jump_timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui_platforme_animation" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_g2vtq")
+}
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SymbolPlatforme" type="Sprite2D" parent="CanvasLayer/BoxContainer"]
+visible = false
+position = Vector2(1130.0001, 626.00006)
+scale = Vector2(7, 7)
+texture = ExtResource("2_fvtld")
+
+[node name="SymbolPlatforme2" type="Sprite2D" parent="CanvasLayer/BoxContainer"]
+visible = false
+position = Vector2(1095, 626)
+scale = Vector2(7, 7)
+texture = ExtResource("2_fvtld")
+
+[node name="SymbolPlatforme3" type="Sprite2D" parent="CanvasLayer/BoxContainer"]
+visible = false
+position = Vector2(1060, 626)
+scale = Vector2(7, 7)
+texture = ExtResource("2_fvtld")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
+modulate = Color(0.8, 0.75686276, 0.6039216, 1)
+offset_left = 1048.0
+offset_top = 631.0
+offset_right = 1144.0
+offset_bottom = 642.0
+max_value = 4.0
+value = 4.0
+show_percentage = false
+
+[node name="progresse bar timer" type="Timer" parent="CanvasLayer"]
+wait_time = 3.0
+one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_xo3ru")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-3.8146973e-06, -1.0000229)
+scale = Vector2(1.6444443, 1.7244443)
+energy = 0.3
+texture = ExtResource("2_hjaqi")
+
+[node name="particule_course" type="CPUParticles2D" parent="."]
+position = Vector2(-1, 33)
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.25
+randomness = 0.12
+gravity = Vector2(-500, -40)
+scale_amount_max = 5.0
+
+[connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsdqh5rfn7rcq"]
+
+[ext_resource type="Script" uid="uid://1rvlybxovubx" path="res://script/mort/respawn_point.gd" id="1_vaiuw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxard"]
+radius = 31.400637
+
+[node name="respawn_point" type="Node2D"]
+script = ExtResource("1_vaiuw")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xxard")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

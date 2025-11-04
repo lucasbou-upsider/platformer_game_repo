@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://de7oe80akrahv"]
+
+[node name="Pique" type="StaticBody2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-5, 0, 0, -8, 5, 0)
