@@ -1,6 +1,7 @@
 extends Node
 
 var nbr_platforme = 0
+var orientation_platforme = "horizontale"
 
 #debloquage du premiere upside
 var first_upsider = false

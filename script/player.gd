@@ -73,8 +73,14 @@ func mort():
 		GameManager.player_mort = false
 		print("mort")
 		#aaaaa
+
+
 func ui_platforme():
 	ui_platforme_animation.play(str(GameManager.nbr_platforme))
+	if GameManager.orientation_platforme == "verticale":
+		$CanvasLayer/platforme/platforme_ui.rotation = 90.0
+	elif GameManager.orientation_platforme == "horizontale":
+		$CanvasLayer/platforme/platforme_ui.rotation = 0.0
 
 func platforme_reload():
 	if GameManager.nbr_platforme == 0:
