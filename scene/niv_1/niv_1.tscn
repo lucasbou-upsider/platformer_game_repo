@@ -400,7 +400,7 @@ libraries = {
 }
 
 [node name="player" parent="." instance=ExtResource("1_j1enk")]
-position = Vector2(4467, 2864)
+position = Vector2(4528, 2881)
 deceleration = 0.5
 aceleration = 0.5
 
