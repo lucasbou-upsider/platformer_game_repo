@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://byl8y7edxwee2"]
+[gd_scene load_steps=13 format=3 uid="uid://byl8y7edxwee2"]
 
 [ext_resource type="Script" uid="uid://rlls30862rht" path="res://script/player.gd" id="1_xo3ru"]
 [ext_resource type="Texture2D" uid="uid://i5o04onixrx" path="res://sprite/player/symbol platforme.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/niv_1/lumiere_godot.jpeg" id="2_hjaqi"]
-[ext_resource type="Texture2D" uid="uid://b2vxm0x0gif17" path="res://sprite/player/Tiles.png" id="3_ct4mp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
 radius = 20.0
@@ -236,7 +235,7 @@ offset_bottom = 31.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hjaqi")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 position = Vector2(-20, -31)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -277,6 +276,7 @@ scale = Vector2(7, 7)
 texture = ExtResource("2_fvtld")
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 modulate = Color(0.8, 0.75686276, 0.6039216, 1)
 offset_left = 1048.0
 offset_top = 631.0
@@ -289,16 +289,6 @@ show_percentage = false
 [node name="progresse bar timer" type="Timer" parent="CanvasLayer"]
 wait_time = 3.0
 one_shot = true
-
-[node name="platforme" type="Node2D" parent="CanvasLayer"]
-
-[node name="platforme_ui" type="Sprite2D" parent="CanvasLayer/platforme"]
-position = Vector2(1131, 34)
-rotation = 1.5707964
-scale = Vector2(4, 4)
-texture = ExtResource("3_ct4mp")
-region_enabled = true
-region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_xo3ru")

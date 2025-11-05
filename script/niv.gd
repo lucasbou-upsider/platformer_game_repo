@@ -6,14 +6,28 @@ var isntance_platforme_lumiere_horizontale = preload("res://scene/platforme_lumi
 var timer_start = false
 @onready var progress_bar: ProgressBar = $player/CanvasLayer/ProgressBar
 @onready var platforme_timer: Timer = $platforme_timer
+@onready var platforme_marker: Sprite2D = $platforme_marker
 
 func _ready() -> void:
 	pass 
 
 
 func _process(_delta: float) -> void:
+	
+	#platforme marker 
+	platforme_marker.position = get_global_mouse_position()
+	if GameManager.first_upsider == true and timer_start == false:
+		platforme_marker.visible = true
+		if Input.is_action_just_pressed("orientation_platforme"):
+			if GameManager.orientation_platforme == "verticale":
+				platforme_marker.rotation = 0.0
+			if GameManager.orientation_platforme == "horizontale":
+				platforme_marker.rotation = 1.57079637050629
+	else:
+		platforme_marker.visible = false
+	
 	#placage de platforme
-	if GameManager.first_upsider == true and  timer_start == false:
+	if GameManager.first_upsider == true and timer_start == false:
 		if Input.is_action_just_pressed("platforme"):
 			if GameManager.nbr_platforme != 0:
 				if GameManager.orientation_platforme == "horizontale":
