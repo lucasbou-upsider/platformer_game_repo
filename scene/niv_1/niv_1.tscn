@@ -327,6 +327,9 @@ tile_set = SubResource("TileSet_wq51a")
 [node name="respawn_point" parent="death_and_respawn/respawn" instance=ExtResource("2_f6lua")]
 position = Vector2(3689, 427)
 
+[node name="respawn_point" parent="death_and_respawn/respawn/respawn_point" instance=ExtResource("2_f6lua")]
+position = Vector2(3331, 177)
+
 [node name="respawn_point2" parent="death_and_respawn/respawn" instance=ExtResource("2_f6lua")]
 position = Vector2(7034, 1015)
 
@@ -400,7 +403,7 @@ libraries = {
 }
 
 [node name="player" parent="." instance=ExtResource("1_j1enk")]
-position = Vector2(4528, 2881)
+position = Vector2(4387, 1768)
 deceleration = 0.5
 aceleration = 0.5
 
