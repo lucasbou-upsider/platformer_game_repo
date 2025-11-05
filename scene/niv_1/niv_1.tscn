@@ -333,6 +333,9 @@ position = Vector2(3331, 177)
 [node name="respawn_point2" parent="death_and_respawn/respawn" instance=ExtResource("2_f6lua")]
 position = Vector2(7034, 1015)
 
+[node name="respawn_point2" parent="death_and_respawn/respawn/respawn_point2" instance=ExtResource("2_f6lua")]
+position = Vector2(-1918, -2025)
+
 [node name="respawn_point3" parent="death_and_respawn/respawn" instance=ExtResource("2_f6lua")]
 position = Vector2(2932, 2093)
 
