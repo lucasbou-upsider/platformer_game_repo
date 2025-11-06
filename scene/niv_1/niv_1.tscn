@@ -42,7 +42,7 @@ fill_from = Vector2(0.47413793, 0)
 fill_to = Vector2(0.5, 1)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y8hb5"]
-polygon = PackedVector2Array(-8054, 4935, -7547, 3967, -2804, 4221, -3042, 5110)
+polygon = PackedVector2Array(-8054, 4935, -7547, 3967, -3090, 4284, -3371, 5076)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1kcmt"]
 polygon = PackedVector2Array(2571, 170, 2587, 805, 4336, 676, 2877, -161)
@@ -51,10 +51,10 @@ polygon = PackedVector2Array(2571, 170, 2587, 805, 4336, 676, 2877, -161)
 polygon = PackedVector2Array(1285, -148, 3024, -151, 3040, 149, 1305, 147)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2jjpc"]
-polygon = PackedVector2Array(11621, 578, 11679, 722, 13181, 698, 13091, 348, 12669, 387, 11592, 592)
+polygon = PackedVector2Array(11621, 578, 11679, 722, 12193, 725, 12985, 904, 12040, 290, 12576, 546, 11592, 592)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wq51a"]
-polygon = PackedVector2Array(13736, -33, 13377, 644, 15698, 592, 14994, -203)
+polygon = PackedVector2Array(13736, -33, 13377, 644, 15850, 767, 14994, -203)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bffma"]
 texture = ExtResource("3_1kcmt")
@@ -333,7 +333,7 @@ position = Vector2(-22, -596)
 occluder = SubResource("OccluderPolygon2D_2jjpc")
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="lumiere"]
-position = Vector2(-22, -596)
+position = Vector2(-329, -1133)
 occluder = SubResource("OccluderPolygon2D_wq51a")
 
 [node name="sprite" type="TileMapLayer" parent="."]
@@ -360,6 +360,10 @@ position = Vector2(2949, 2099)
 [node name="death_zone" type="Area2D" parent="death_and_respawn/death_zone"]
 script = ExtResource("2_wq51a")
 
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
+position = Vector2(5839, 5328)
+polygon = PackedVector2Array(11333, -933, 4546, 393, -457, -1355, 10423, -916)
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
 polygon = PackedVector2Array(-150, 754, 5640, 935, 3125, 889)
 
@@ -370,10 +374,6 @@ polygon = PackedVector2Array(2976, 764, 9335, -178, 2976, 782)
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
 position = Vector2(-1312, 2891)
 polygon = PackedVector2Array(8771, 1188, 4546, 393, -457, -1355, 5477, 318)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone/CollisionPolygon2D3"]
-position = Vector2(7151, 2437)
-polygon = PackedVector2Array(11333, -933, 4546, 393, -457, -1355, 4773, -806)
 
 [node name="death_zone2" type="Node2D" parent="death_and_respawn/death_zone"]
 
