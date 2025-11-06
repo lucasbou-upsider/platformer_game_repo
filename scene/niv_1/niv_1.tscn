@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://cmy7lo2yylaql"]
+[gd_scene load_steps=37 format=4 uid="uid://cmy7lo2yylaql"]
 
 [ext_resource type="Script" uid="uid://dbjdylm66xyt4" path="res://script/niv.gd" id="1_77eqh"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player.tscn" id="1_j1enk"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://jhjed5k3wior" path="res://sprite/niv_1/feuille.png" id="4_2jjpc"]
 [ext_resource type="Texture2D" uid="uid://buwkfikh0755v" path="res://sprite/niv_1/arbre_doré.png" id="4_nxphg"]
 [ext_resource type="Script" uid="uid://dnvp0pu3hiabp" path="res://script/world_1/dezoom.gd" id="9_s57ix"]
+[ext_resource type="PackedScene" uid="uid://b2gmv62n0rpg6" path="res://scene/niv_1/oiseau_monde_1.tscn" id="14_n4eyw"]
 
 [sub_resource type="Environment" id="Environment_7x7m7"]
 background_mode = 3
@@ -450,7 +451,7 @@ gravity = Vector2(1000, 800)
 scale_amount_max = 3.0
 
 [node name="first_upsider" parent="." instance=ExtResource("3_5c07v")]
-position = Vector2(13984, 3655)
+position = Vector2(4451, 2927)
 
 [node name="pilier_devant" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.5, 1.5)
@@ -475,6 +476,9 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_y8hb5")
 region_enabled = true
 region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
+
+[node name="oiseau_monde1" parent="." instance=ExtResource("14_n4eyw")]
+position = Vector2(4990, 2920)
 
 [connection signal="timeout" from="platforme_timer" to="." method="_on_platforme_timer_timeout"]
 [connection signal="area_entered" from="death_and_respawn/death_zone/death_zone" to="death_and_respawn/death_zone/death_zone" method="_on_area_entered"]

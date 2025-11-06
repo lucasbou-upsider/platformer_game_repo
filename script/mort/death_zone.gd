@@ -10,4 +10,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_entered(_area: Area2D) -> void:
-	GameManager.player_mort = true
+	if _area.is_in_group("player"):
+		GameManager.player_mort = true
