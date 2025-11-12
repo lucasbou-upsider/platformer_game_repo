@@ -1,11 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bj4o2ek3xjc4s"]
+[gd_scene load_steps=20 format=3 uid="uid://bj4o2ek3xjc4s"]
 
 [ext_resource type="Script" uid="uid://dc6ontjcio8ed" path="res://script/world_1/cuillere_mob.gd" id="1_rngmc"]
 [ext_resource type="Texture2D" uid="uid://7crroqlwvn" path="res://sprite/niv_1/cuillere_mob.png" id="2_liqp5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_liqp5"]
-atlas = ExtResource("2_liqp5")
-region = Rect2(64, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbd6c"]
 atlas = ExtResource("2_liqp5")
@@ -29,11 +25,15 @@ region = Rect2(384, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rngmc"]
 atlas = ExtResource("2_liqp5")
+region = Rect2(448, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liqp5"]
+atlas = ExtResource("2_liqp5")
 region = Rect2(0, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8pat"]
 atlas = ExtResource("2_liqp5")
-region = Rect2(448, 0, 64, 32)
+region = Rect2(64, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ntd7e"]
 atlas = ExtResource("2_liqp5")
@@ -55,12 +55,13 @@ region = Rect2(704, 0, 64, 32)
 atlas = ExtResource("2_liqp5")
 region = Rect2(768, 0, 64, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcdgh"]
+atlas = ExtResource("2_liqp5")
+region = Rect2(832, 0, 64, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbd6c"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_liqp5")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wbd6c")
 }, {
@@ -84,6 +85,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_djvtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rngmc")
 }],
 "loop": false,
 "name": &"attaque",
@@ -91,16 +95,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rngmc")
+"texture": SubResource("AtlasTexture_liqp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8pat")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k8pat")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ntd7e")
 }, {
@@ -115,6 +119,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v6uqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcdgh")
 }],
 "loop": true,
 "name": &"walk",
@@ -136,9 +143,8 @@ script = ExtResource("1_rngmc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-14, -11)
 sprite_frames = SubResource("SpriteFrames_wbd6c")
-animation = &"attaque"
-frame = 7
-frame_progress = 0.5055491
+animation = &"idle"
+frame_progress = 0.78973866
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3.25)

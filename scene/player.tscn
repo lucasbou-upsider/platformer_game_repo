@@ -224,7 +224,13 @@ _data = {
 polygon = PackedVector2Array(20, -31, 20, 31, -20, 31, -20, -31)
 
 [node name="player" type="CharacterBody2D"]
+safe_margin = 0.14
 script = ExtResource("1_xo3ru")
+
+[node name="raycast" type="Node2D" parent="."]
+
+[node name="right_ray" type="RayCast2D" parent="raycast"]
+target_position = Vector2(28, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0
@@ -244,6 +250,10 @@ shape = SubResource("CapsuleShape2D_xo3ru")
 
 [node name="jump_timer" type="Timer" parent="."]
 wait_time = 0.3
+one_shot = true
+
+[node name="jump_buffer_timer" type="Timer" parent="."]
+wait_time = 0.08
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

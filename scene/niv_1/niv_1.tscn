@@ -23,6 +23,7 @@ tonemap_exposure = 0.49
 tonemap_white = 4.25
 sdfgi_bounce_feedback = 1.14
 glow_enabled = true
+glow_blend_mode = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hggep"]
 texture = ExtResource("2_bffma")
@@ -196,7 +197,7 @@ color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Montagne" type="Sprite2D" parent="montagne_pilier/montagne_fonce"]
-modulate = Color(0.17641911, 0.17641908, 0.17641908, 1)
+modulate = Color(0.08475383, 0.08475383, 0.08475383, 1)
 texture_filter = 2
 position = Vector2(304, 618.00006)
 scale = Vector2(12.840626, 18.562485)
@@ -379,7 +380,7 @@ position = Vector2(5666, 215)
 shape = SubResource("RectangleShape2D_f6lua")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="mur_arbre/StaticBody2D"]
-position = Vector2(1753.5, 3936.5)
+position = Vector2(4113, 3570)
 shape = SubResource("RectangleShape2D_5kgu7")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="mur_arbre/StaticBody2D"]
