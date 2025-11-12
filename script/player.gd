@@ -21,17 +21,16 @@ var coyote_time = 0.3
 @export_range(0, 1) var aceleration = 0.1
 @onready var jump_buffer_timer: Timer = $jump_buffer_timer
 var saut = 0
-const  gravity = 1000
-const  fall_gravity = 1400
+const gravity = 1000
+const fall_gravity = 1400
 var nbr_de_saut = 0
 
 #wall jump
 @export_category("wall jump variable")
 @export var wall_slide = 150
-@onready var left_ray: RayCast2D = $raycast/left_ray
 @onready var right_ray: RayCast2D = $raycast/right_ray
 @export var wall_x_force = 200
-@export var wall_y_force = -700
+@export var wall_y_force = -750
 var is_wall_jumping = false
 
 func _physics_process(delta: float) -> void:
@@ -97,7 +96,7 @@ func _physics_process(delta: float) -> void:
 
 #wall jump
 func wall_logique():
-	if is_on_wall_only():
+	if is_on_wall():
 		velocity.y = wall_slide
 		if Input.is_action_just_pressed("saut"):
 			#if left_ray.is_colliding():
