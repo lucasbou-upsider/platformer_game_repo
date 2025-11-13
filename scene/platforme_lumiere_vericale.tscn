@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2vxm0x0gif17" path="res://sprite/player/Tiles.png" id="2_5t8fa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cnum"]
-size = Vector2(74, 34)
+size = Vector2(94, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34sav"]
 size = Vector2(79, 39)

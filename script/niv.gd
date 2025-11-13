@@ -18,11 +18,10 @@ func _process(_delta: float) -> void:
 	platforme_marker.position = get_global_mouse_position()
 	if GameManager.first_upsider == true and timer_start == false:
 		platforme_marker.visible = true
-		if Input.is_action_just_pressed("orientation_platforme"):
-			if GameManager.orientation_platforme == "verticale":
-				platforme_marker.rotation = 0.0
-			if GameManager.orientation_platforme == "horizontale":
-				platforme_marker.rotation = 1.57079637050629
+		if GameManager.orientation_platforme == "horizontale":
+			platforme_marker.rotation = 0.0
+		if GameManager.orientation_platforme == "verticale":
+			platforme_marker.rotation = 1.57079637050629
 	else:
 		platforme_marker.visible = false
 	

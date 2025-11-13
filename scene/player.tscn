@@ -230,7 +230,9 @@ script = ExtResource("1_xo3ru")
 [node name="raycast" type="Node2D" parent="."]
 
 [node name="right_ray" type="RayCast2D" parent="raycast"]
-target_position = Vector2(28, 0)
+position = Vector2(-0.99999994, -14.999999)
+scale = Vector2(5, 5)
+target_position = Vector2(10.4, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0

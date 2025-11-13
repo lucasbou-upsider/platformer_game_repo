@@ -22,7 +22,7 @@ var coyote_time = 0.3
 @onready var jump_buffer_timer: Timer = $jump_buffer_timer
 var saut = 0
 const gravity = 1000
-const fall_gravity = 1400
+const fall_gravity = 1500
 var nbr_de_saut = 0
 
 #wall jump
@@ -33,6 +33,15 @@ var nbr_de_saut = 0
 @export var wall_y_force = -750
 var is_wall_jumping = false
 
+#dash
+@export_category("dash variable")
+@export var dash_speed = 600.0
+@export var facing_right = true
+@export var dash_gravity = 0
+var dash_key_pressed = 0
+var is_dashing = false
+var nbr_dash = 1
+
 func _physics_process(delta: float) -> void:
 	
 	wall_logique()
@@ -42,8 +51,10 @@ func _physics_process(delta: float) -> void:
 	flip()
 	
 	# gravité
-	if not is_on_floor():
+	if not is_on_floor() and is_dashing == false:
 		velocity.y +=  get_good_gravity() * delta
+	elif is_dashing == true:
+		velocity.y = dash_gravity
 
 	#coyote time
 	if is_on_floor() and can_jump == false:
@@ -57,40 +68,22 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("saut") and can_jump == true:
 		can_jump = false
 		velocity.y = JUMP_VELOCITY
-	#if Input.is_action_just_released("saut") and velocity.y < 0:
-		#jump_buffer_timer.start()
-		#saut = 0
-	#if Input.is_action_just_pressed("saut") and can_jump == true:
-		#can_jump = false
-		#jump_buffer_timer.start()
-		#saut = 1
-	#if is_on_floor() and !jump_buffer_timer.is_stopped():
-		#if saut == 0:
-			#print("petit_saut")
-			#velocity.y = JUMP_VELOCITY / 4
-		#if saut == 1:
-			#print("grand_saut")
-			#velocity.y = JUMP_VELOCITY
 		
-
 	#direction
-	if is_wall_jumping == false:
+	if is_wall_jumping == false and is_dashing == false:
 		var direction := Input.get_axis("gauche", "droite")
 		if direction:
 			velocity.x = move_toward(velocity.x , direction * speed, aceleration * speed)
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed * deceleration)
 
-	#course
-	if Input.is_action_just_pressed("courire"):
-		if courir == false:
-			particule_course.emitting = true
-			speed = 350.0
-			courir = true
-		else:
-			speed = 250.0
-			courir = false
-
+	#dash
+	if Input.is_action_just_pressed("courire") and dash_key_pressed ==0 and nbr_dash == 1:
+		dash_key_pressed = 1
+		nbr_dash -= 1
+		dash()
+	if is_on_floor():
+		nbr_dash = 1
 
 	move_and_slide()
 
@@ -99,9 +92,6 @@ func wall_logique():
 	if is_on_wall():
 		velocity.y = wall_slide
 		if Input.is_action_just_pressed("saut"):
-			#if left_ray.is_colliding():
-				#velocity = Vector2(wall_x_force, wall_y_force)
-				#wall_jumping()
 			if right_ray.is_colliding():
 				velocity = Vector2(-wall_x_force, wall_y_force)
 				wall_jumping()
@@ -110,15 +100,39 @@ func wall_jumping():
 	await get_tree().create_timer(0.12).timeout
 	is_wall_jumping = false
 
+#dash
+func dash():
+	if dash_key_pressed == 1:
+		is_dashing = true
+	else :
+		is_dashing = false
+		
+	if facing_right == true:
+		velocity.x = dash_speed
+		dash_started()
+	if facing_right == false:
+		velocity.x = -dash_speed
+		dash_started()
+func dash_started():
+	if is_dashing == true:
+		dash_key_pressed = 1
+		await get_tree().create_timer(0.2).timeout
+		is_dashing = false
+		dash_key_pressed = 0
+	else:
+		return
+
 
 #flip players
 func flip():
 	if velocity.x > 0.0:
+		facing_right = true
 		scale.x = scale.y * 1
-		wall_x_force = 300.0
+		wall_x_force = 250.0
 	if velocity.x < 0.0:
+		facing_right = false
 		scale.x = scale.y * -1
-		wall_x_force = -300.0
+		wall_x_force = -250.0
 
 
 #gravity saut
