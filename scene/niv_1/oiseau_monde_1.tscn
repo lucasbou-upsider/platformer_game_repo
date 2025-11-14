@@ -221,7 +221,7 @@ script = ExtResource("1_2ut3b")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wchp3")
-animation = &"vole"
+animation = &"idle"
 
 [node name="area_detection" type="Area2D" parent="."]
 

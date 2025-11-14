@@ -22,7 +22,7 @@ var coyote_time = 0.3
 @onready var jump_buffer_timer: Timer = $jump_buffer_timer
 var saut = 0
 const gravity = 1000
-const fall_gravity = 1500
+const fall_gravity = 1600
 var nbr_de_saut = 0
 
 #wall jump
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 		dash_key_pressed = 1
 		nbr_dash -= 1
 		dash()
-	if is_on_floor():
+	if is_on_floor() or is_on_wall():
 		nbr_dash = 1
 
 	move_and_slide()
@@ -118,6 +118,7 @@ func dash_started():
 		dash_key_pressed = 1
 		await get_tree().create_timer(0.2).timeout
 		is_dashing = false
+		await get_tree().create_timer(0.2).timeout
 		dash_key_pressed = 0
 	else:
 		return
