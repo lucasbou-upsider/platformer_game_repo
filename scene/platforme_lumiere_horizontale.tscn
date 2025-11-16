@@ -9,7 +9,7 @@ size = Vector2(92, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2b5"]
 size = Vector2(79, 39)
 
-[node name="platforme_lumiere_horizontale" type="StaticBody2D"]
+[node name="platforme_lumiere_horizontale" type="RigidBody2D"]
 script = ExtResource("1_ordyb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,3 +26,5 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_k7d4l")
 region_enabled = true
 region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
+
+[node name="Timer" type="Timer" parent="."]
