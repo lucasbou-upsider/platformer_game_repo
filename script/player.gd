@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 class_name player
 
+#vie
+var pv = 3
+
+
 #platforme
 @onready var ui_platforme_animation: AnimationPlayer = $CanvasLayer/ui_platforme_animation
 @onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar
@@ -148,11 +152,16 @@ func _on_jump_timer_timeout() -> void:
 
 #mort
 func mort():
-	if GameManager.player_mort == true:
+	if GameManager.player_mort == true or pv == 0:
 		global_position = GameManager.respawn_point
 		GameManager.player_mort = false
+		pv = 3
 		print("mort")
-		#aaaaa
+func degats():
+	pv -=1
+
+
+
 
 #comptage du nbr de platforme ui
 func ui_platforme():

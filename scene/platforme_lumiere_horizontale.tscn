@@ -12,7 +12,7 @@ size = Vector2(79, 39)
 [node name="platforme_lumiere_horizontale" type="RigidBody2D"]
 script = ExtResource("1_ordyb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["platforme"]]
 shape = SubResource("RectangleShape2D_8cnum")
 
 [node name="Area2D" type="Area2D" parent="." groups=["platforme"]]
@@ -27,4 +27,9 @@ texture = ExtResource("2_k7d4l")
 region_enabled = true
 region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="remove_platforme" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="remove_platforme" to="." method="_on_remove_platforme_timeout"]

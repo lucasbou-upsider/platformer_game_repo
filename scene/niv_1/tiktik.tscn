@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2d0ctlschf4w"]
+
+[ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/world_1/tiktik.gd" id="1_gv45o"]
+[ext_resource type="Texture2D" uid="uid://hfw8y2cwy3t5" path="res://sprite/niv_1/titik.png" id="1_mur5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv45o"]
+atlas = ExtResource("1_mur5q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gwfl"]
+atlas = ExtResource("1_mur5q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syped"]
+atlas = ExtResource("1_mur5q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77e52"]
+atlas = ExtResource("1_mur5q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itpsw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv45o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gwfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syped")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77e52")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv45o"]
+size = Vector2(8, 4.800001)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gv45o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gwfl"]
+radius = 56.000355
+
+[node name="tiktik" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_gv45o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12.2)
+sprite_frames = SubResource("SpriteFrames_itpsw")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.4)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_gv45o")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-12.599999, -7.6)
+target_position = Vector2(0.19999981, 14.799999)
+
+[node name="degats" type="Area2D" parent="." groups=["ennemie"]]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="degats"]
+shape = SubResource("CircleShape2D_gv45o")
+
+[node name="Area2D" type="Area2D" parent="."]
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6gwfl")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

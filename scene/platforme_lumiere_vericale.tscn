@@ -9,12 +9,19 @@ size = Vector2(94, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34sav"]
 size = Vector2(79, 39)
 
-[node name="platforme_lumiere_vericale" type="StaticBody2D"]
+[node name="platforme_lumiere_vericale" type="RigidBody2D"]
 rotation = 1.5707964
 script = ExtResource("1_34sav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8cnum")
+
+[node name="Area2D" type="Area2D" parent="." groups=["platforme"]]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_34sav")
 
 [node name="Tiles" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
@@ -22,8 +29,9 @@ texture = ExtResource("2_5t8fa")
 region_enabled = true
 region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
 
-[node name="Area2D" type="Area2D" parent="." groups=["platforme"]]
+[node name="remove_platforme" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_34sav")
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="remove_platforme" to="." method="_on_remove_platforme_timeout"]

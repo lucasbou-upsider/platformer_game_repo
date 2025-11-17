@@ -9,7 +9,7 @@ var timer_start = false
 @onready var platforme_marker: Sprite2D = $platforme_marker
 
 func _ready() -> void:
-	pass 
+	pass
 
 
 func _process(_delta: float) -> void:
