@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cmy7lo2yylaql"]
+[gd_scene load_steps=33 format=4 uid="uid://c3wdwywvpmmbq"]
 
 [ext_resource type="Script" uid="uid://dbjdylm66xyt4" path="res://script/niv.gd" id="1_77eqh"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player.tscn" id="1_j1enk"]
@@ -656,13 +656,13 @@ region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
 position = Vector2(-5, 5)
 
 [node name="oiseau_monde1" parent="oiseau" instance=ExtResource("14_n4eyw")]
-position = Vector2(5110, 3024)
+position = Vector2(5113, 3012)
 
 [node name="oiseau_monde2" parent="oiseau" instance=ExtResource("14_n4eyw")]
 position = Vector2(6167, 2784)
 
 [node name="oiseau_monde3" parent="oiseau" instance=ExtResource("14_n4eyw")]
-position = Vector2(3700.0002, 2623)
+position = Vector2(3698, 2607)
 
 [node name="oiseau_monde4" parent="oiseau" instance=ExtResource("14_n4eyw")]
 position = Vector2(8274, 1571.0002)
