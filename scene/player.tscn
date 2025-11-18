@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://byl8y7edxwee2"]
+[gd_scene load_steps=20 format=3 uid="uid://byl8y7edxwee2"]
 
 [ext_resource type="Script" uid="uid://rlls30862rht" path="res://script/player.gd" id="1_xo3ru"]
+[ext_resource type="Texture2D" uid="uid://bx1qndd3qv6xk" path="res://sprite/player/lifetest.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://i5o04onixrx" path="res://sprite/player/symbol platforme.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/niv_1/lumiere_godot.jpeg" id="2_hjaqi"]
 
@@ -11,6 +12,212 @@ height = 62.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xo3ru"]
 radius = 27.0
 height = 74.0
+
+[sub_resource type="Animation" id="Animation_g2vtq"]
+resource_name = "0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lifetest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lifetest2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lifetest3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2fvbb"]
+resource_name = "1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lifetest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lifetest2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lifetest3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ml7e8"]
+resource_name = "2"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lifetest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lifetest2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lifetest3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ihjo1"]
+resource_name = "3"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lifetest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lifetest2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lifetest3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dk1vr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lifetest:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lifetest2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lifetest3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_34jf3"]
+_data = {
+&"0": SubResource("Animation_g2vtq"),
+&"1": SubResource("Animation_2fvbb"),
+&"2": SubResource("Animation_ml7e8"),
+&"3": SubResource("Animation_ihjo1"),
+&"RESET": SubResource("Animation_dk1vr")
+}
 
 [sub_resource type="Animation" id="Animation_fvtld"]
 resource_name = "0"
@@ -234,6 +441,11 @@ position = Vector2(-0.99999994, -14.999999)
 scale = Vector2(5, 5)
 target_position = Vector2(10.4, 0)
 
+[node name="right_ray2" type="RayCast2D" parent="raycast"]
+position = Vector2(-1, 13.999999)
+scale = Vector2(5, 5)
+target_position = Vector2(10.4, 0)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0
 offset_top = -31.0
@@ -260,9 +472,27 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ui_platforme_animation" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer"]
+offset_bottom = 40.0
+
+[node name="Lifetest" type="Sprite2D" parent="CanvasLayer/BoxContainer2"]
+position = Vector2(22, 21)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ct4mp")
+
+[node name="Lifetest2" type="Sprite2D" parent="CanvasLayer/BoxContainer2"]
+position = Vector2(55, 21)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ct4mp")
+
+[node name="Lifetest3" type="Sprite2D" parent="CanvasLayer/BoxContainer2"]
+position = Vector2(90, 21)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ct4mp")
+
+[node name="ui_life_animation" type="AnimationPlayer" parent="CanvasLayer/BoxContainer2"]
 libraries = {
-&"": SubResource("AnimationLibrary_g2vtq")
+&"": SubResource("AnimationLibrary_34jf3")
 }
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
@@ -286,6 +516,12 @@ visible = false
 position = Vector2(1060, 626)
 scale = Vector2(7, 7)
 texture = ExtResource("2_fvtld")
+
+[node name="ui_platforme_animation" type="AnimationPlayer" parent="CanvasLayer/BoxContainer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_g2vtq")
+}
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 visible = false

@@ -35,10 +35,10 @@ texture = ExtResource("2_bffma")
 [sub_resource type="TileSet" id="TileSet_s57ix"]
 sources/0 = SubResource("TileSetAtlasSource_hggep")
 
-[sub_resource type="Gradient" id="Gradient_wq51a"]
+[sub_resource type="Gradient" id="Gradient_y8hb5"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f6lua"]
-gradient = SubResource("Gradient_wq51a")
+gradient = SubResource("Gradient_y8hb5")
 fill_from = Vector2(0.47413793, 0)
 fill_to = Vector2(0.5, 1)
 
@@ -632,7 +632,7 @@ gravity = Vector2(1000, 800)
 scale_amount_max = 3.0
 
 [node name="first_upsider" parent="." instance=ExtResource("3_5c07v")]
-position = Vector2(13948, 1574)
+position = Vector2(4409, 2933)
 
 [node name="pilier_devant" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.5, 1.5)

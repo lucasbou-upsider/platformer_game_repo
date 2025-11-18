@@ -4,10 +4,10 @@ class_name player
 
 #vie
 var pv = 3
-
+@onready var ui_life_animation: AnimationPlayer = $CanvasLayer/BoxContainer2/ui_life_animation
 
 #platforme
-@onready var ui_platforme_animation: AnimationPlayer = $CanvasLayer/ui_platforme_animation
+@onready var ui_platforme_animation: AnimationPlayer = $CanvasLayer/BoxContainer/ui_platforme_animation
 @onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar
 @onready var progresse_bar_timer: Timer = $"CanvasLayer/progresse bar timer"
 
@@ -33,6 +33,7 @@ var nbr_de_saut = 0
 @export_category("wall jump variable")
 @export var wall_slide = 150
 @onready var right_ray: RayCast2D = $raycast/right_ray
+@onready var right_ray_2: RayCast2D = $raycast/right_ray2
 @export var wall_x_force = 200
 @export var wall_y_force = -750
 var is_wall_jumping = false
@@ -53,6 +54,8 @@ func _physics_process(delta: float) -> void:
 	mort()
 	platforme_reload()
 	flip()
+	life()
+	
 	
 	# gravité
 	if not is_on_floor() and is_dashing == false:
@@ -91,12 +94,20 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+#la vie du joueur
+func life():
+	ui_life_animation.play(str(pv))
+
+
+
+
+
 #wall jump
 func wall_logique():
 	if is_on_wall():
 		velocity.y = wall_slide
 		if Input.is_action_just_pressed("saut"):
-			if right_ray.is_colliding():
+			if right_ray.is_colliding() or right_ray_2.is_colliding():
 				velocity = Vector2(-wall_x_force, wall_y_force)
 				wall_jumping()
 func wall_jumping():
