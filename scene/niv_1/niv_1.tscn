@@ -592,11 +592,7 @@ position = Vector2(3711, -1730)
 script = ExtResource("2_wq51a")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
-
-[node name="death_zone" type="Area2D" parent="death_and_respawn/death_zone/death_zone"]
-script = ExtResource("2_wq51a")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone/death_zone"]
+polygon = PackedVector2Array(3251, 3004, 5590, 3456, 3821, 3626)
 
 [node name="dezoom" type="Node2D" parent="."]
 script = ExtResource("9_s57ix")
@@ -674,5 +670,4 @@ scale = Vector2(-1.0046064, 0.99183774)
 
 [connection signal="timeout" from="platforme_timer" to="." method="_on_platforme_timer_timeout"]
 [connection signal="area_entered" from="death_and_respawn/death_zone/death_zone" to="death_and_respawn/death_zone/death_zone" method="_on_area_entered"]
-[connection signal="area_entered" from="death_and_respawn/death_zone/death_zone/death_zone" to="death_and_respawn/death_zone/death_zone/death_zone" method="_on_area_entered"]
 [connection signal="area_entered" from="dezoom/Area2D" to="dezoom" method="_on_area_2d_area_entered"]
