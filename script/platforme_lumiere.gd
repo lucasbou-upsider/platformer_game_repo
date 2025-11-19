@@ -34,6 +34,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			area.get_parent().degats()
 			queue_free()
 
-
 func _on_remove_platforme_timeout() -> void:
 	queue_free()
+
+#quand la platforme se désintegre 
+func desintegration():
+	if attaque == false:
+		queue_free()

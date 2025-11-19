@@ -6,9 +6,6 @@ var SPEED = -50
 
 
 func _physics_process(delta: float) -> void:
-	input_pickable = true
-	print(input_pickable)
-
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -35,5 +32,6 @@ func protect():
 func degats():
 	queue_free()
 
-func _on_area_2d_mouse_entered() -> void:
-	print("test")
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("platforme"):
+		area.get_parent().desintegration()

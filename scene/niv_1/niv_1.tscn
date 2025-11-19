@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://c3wdwywvpmmbq"]
+[gd_scene load_steps=34 format=4 uid="uid://c3wdwywvpmmbq"]
 
 [ext_resource type="Script" uid="uid://dbjdylm66xyt4" path="res://script/niv.gd" id="1_77eqh"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player.tscn" id="1_j1enk"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://buwkfikh0755v" path="res://sprite/niv_1/arbre_doré.png" id="4_nxphg"]
 [ext_resource type="Texture2D" uid="uid://gbxak3nwxebk" path="res://sprite/niv_1/platformetest.png" id="7_p2rd2"]
 [ext_resource type="Script" uid="uid://dnvp0pu3hiabp" path="res://script/world_1/dezoom.gd" id="9_s57ix"]
+[ext_resource type="PackedScene" uid="uid://b2d0ctlschf4w" path="res://scene/niv_1/tiktik.tscn" id="14_brr2w"]
 [ext_resource type="PackedScene" uid="uid://b2gmv62n0rpg6" path="res://scene/niv_1/oiseau_monde_1.tscn" id="14_n4eyw"]
 
 [sub_resource type="Environment" id="Environment_7x7m7"]
@@ -654,9 +655,6 @@ position = Vector2(-5, 5)
 [node name="oiseau_monde1" parent="oiseau" instance=ExtResource("14_n4eyw")]
 position = Vector2(5113, 3012)
 
-[node name="oiseau_monde2" parent="oiseau" instance=ExtResource("14_n4eyw")]
-position = Vector2(6167, 2784)
-
 [node name="oiseau_monde3" parent="oiseau" instance=ExtResource("14_n4eyw")]
 position = Vector2(3698, 2607)
 
@@ -667,6 +665,9 @@ scale = Vector2(-6.0145044, 5.95163)
 [node name="oiseau_monde4" parent="oiseau/oiseau_monde4" instance=ExtResource("14_n4eyw")]
 position = Vector2(-2.992807, 0.16797735)
 scale = Vector2(-1.0046064, 0.99183774)
+
+[node name="tiktik" parent="." instance=ExtResource("14_brr2w")]
+position = Vector2(6479, 2854)
 
 [connection signal="timeout" from="platforme_timer" to="." method="_on_platforme_timer_timeout"]
 [connection signal="area_entered" from="death_and_respawn/death_zone/death_zone" to="death_and_respawn/death_zone/death_zone" method="_on_area_entered"]

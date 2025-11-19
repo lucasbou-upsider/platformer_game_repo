@@ -45,7 +45,7 @@ size = Vector2(8, 4.800001)
 [sub_resource type="CircleShape2D" id="CircleShape2D_gv45o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gwfl"]
-radius = 56.000355
+radius = 35.20511
 
 [node name="tiktik" type="CharacterBody2D"]
 scale = Vector2(5, 5)
@@ -65,6 +65,17 @@ shape = SubResource("RectangleShape2D_gv45o")
 position = Vector2(-12.599999, -7.6)
 target_position = Vector2(0.19999981, 14.799999)
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+amount = 15
+lifetime = 3.0
+emission_shape = 1
+emission_sphere_radius = 35.03
+gravity = Vector2(0, -10)
+scale_amount_min = 3.0
+scale_amount_max = 4.0
+color = Color(0, 0, 0, 1)
+
 [node name="degats" type="Area2D" parent="." groups=["ennemie"]]
 metadata/_edit_group_ = true
 
@@ -77,4 +88,5 @@ disable_mode = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6gwfl")
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
