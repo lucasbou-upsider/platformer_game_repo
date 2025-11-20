@@ -593,7 +593,8 @@ position = Vector2(3711, -1730)
 script = ExtResource("2_wq51a")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
-polygon = PackedVector2Array(3251, 3004, 5590, 3456, 3821, 3626)
+position = Vector2(-29, 206)
+polygon = PackedVector2Array(2947, 2773, 4218, 3380, 6925, 3690, 6098, 3790, 4168, 3552)
 
 [node name="dezoom" type="Node2D" parent="."]
 script = ExtResource("9_s57ix")

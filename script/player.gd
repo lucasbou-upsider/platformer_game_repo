@@ -4,15 +4,17 @@ class_name player
 
 #vie
 var pv = 3
+var invulnerability_time = 3
+@onready var area: Area2D = $area
 @onready var ui_life_animation: AnimationPlayer = $CanvasLayer/BoxContainer2/ui_life_animation
-
+@onready var collision_area: CollisionShape2D = $area/Collision_area
 #platforme
 @onready var ui_platforme_animation: AnimationPlayer = $CanvasLayer/BoxContainer/ui_platforme_animation
 @onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar
 @onready var progresse_bar_timer: Timer = $"CanvasLayer/progresse bar timer"
 
 #vitesse
-@export var speed = 250.0
+@export var speed = 300.0
 var courir = false
 @onready var particule_course: CPUParticles2D = $particule_course
 
@@ -168,8 +170,15 @@ func mort():
 		GameManager.player_mort = false
 		pv = 3
 		print("mort")
+
+
+
 func degats():
+	position.y -= 10
+	collision_area.set_deferred("disabled", true) 
 	pv -=1
+	await get_tree().create_timer(invulnerability_time).timeout
+	collision_area.set_deferred("disabled", false) 
 
 
 
@@ -183,3 +192,8 @@ func platforme_reload():
 	if GameManager.nbr_platforme == 0:
 		progresse_bar_timer.start()
 		progress_bar.value = progresse_bar_timer.wait_time
+
+
+func _on_area_2d_area_entered(_area: Area2D) -> void:
+	if _area.is_in_group("ennemie"):
+		degats()

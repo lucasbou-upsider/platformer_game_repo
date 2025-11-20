@@ -17,12 +17,9 @@ func _process(_delta: float) -> void:
 			point_light_2d_2.visible = true
 	if Input.is_action_just_released("attaque"):
 		point_light_2d_2.visible = false
-		remove_platforme.start()
 		attaque = true
-	
-	if attaque == true:
-		collision_shape_2d.disabled = true
-		freeze = false
+		activation_attaque()
+
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -41,3 +38,11 @@ func _on_remove_platforme_timeout() -> void:
 func desintegration():
 	if attaque == false:
 		queue_free()
+
+func activation_attaque():
+	remove_platforme.paused = true
+	await get_tree().create_timer(1).timeout
+	remove_platforme.paused = false
+	remove_platforme.start()
+	collision_shape_2d.disabled = true
+	freeze = false

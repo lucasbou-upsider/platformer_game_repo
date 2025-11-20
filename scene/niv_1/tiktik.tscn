@@ -21,6 +21,11 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itpsw"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"protect",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gv45o")
@@ -45,10 +50,12 @@ size = Vector2(8, 4.800001)
 [sub_resource type="CircleShape2D" id="CircleShape2D_gv45o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gwfl"]
-radius = 35.20511
+radius = 28.817354
 
 [node name="tiktik" type="CharacterBody2D"]
 scale = Vector2(5, 5)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_gv45o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -70,7 +77,7 @@ scale = Vector2(0.99999994, 0.99999994)
 amount = 15
 lifetime = 3.0
 emission_shape = 1
-emission_sphere_radius = 35.03
+emission_sphere_radius = 28.99
 gravity = Vector2(0, -10)
 scale_amount_min = 3.0
 scale_amount_max = 4.0
