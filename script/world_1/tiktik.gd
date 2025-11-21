@@ -43,7 +43,6 @@ func aleatoire_protect():
 	var random_number = RandomNumberGenerator.new()
 	var nbr_random_number= random_number.randi_range(1, 2)
 	await get_tree().create_timer(4).timeout
-	print(nbr_random_number)
 	if nbr_random_number == 1:
 		protect()
 	if nbr_random_number == 2:
@@ -65,3 +64,10 @@ func degats():
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("platforme") :
 		area.get_parent().desintegration()
+	if area.is_in_group("platforme_marker"):
+		area.get_parent().change_color()
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("platforme_marker"):
+		area.get_parent().reset_color()

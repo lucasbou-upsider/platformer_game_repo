@@ -446,6 +446,16 @@ position = Vector2(-1, 13.999999)
 scale = Vector2(5, 5)
 target_position = Vector2(10.4, 0)
 
+[node name="jump_timer2" type="Node2D" parent="."]
+
+[node name="jump_timer" type="Timer" parent="jump_timer2"]
+wait_time = 0.3
+one_shot = true
+
+[node name="regen_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0
 offset_top = -31.0
@@ -461,14 +471,6 @@ position = Vector2(-20, -31)
 [node name="Collision_area" type="CollisionShape2D" parent="area"]
 position = Vector2(20, 31)
 shape = SubResource("CapsuleShape2D_xo3ru")
-
-[node name="jump_timer" type="Timer" parent="."]
-wait_time = 0.3
-one_shot = true
-
-[node name="jump_buffer_timer" type="Timer" parent="."]
-wait_time = 0.08
-one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -557,5 +559,6 @@ randomness = 0.12
 gravity = Vector2(-500, -40)
 scale_amount_max = 5.0
 
+[connection signal="timeout" from="jump_timer2/jump_timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="regen_timer" to="." method="_on_regen_timer_timeout"]
 [connection signal="area_entered" from="area" to="." method="_on_area_2d_area_entered"]
-[connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]

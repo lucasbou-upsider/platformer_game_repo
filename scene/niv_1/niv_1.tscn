@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c3wdwywvpmmbq"]
+[gd_scene load_steps=33 format=4 uid="uid://c3wdwywvpmmbq"]
 
 [ext_resource type="Script" uid="uid://dbjdylm66xyt4" path="res://script/niv.gd" id="1_77eqh"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player.tscn" id="1_j1enk"]
@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bsdqh5rfn7rcq" path="res://scene/mort/respawn_point.tscn" id="2_f6lua"]
 [ext_resource type="Texture2D" uid="uid://dnjrmj3otv4yd" path="res://sprite/niv_1/montagne.png" id="2_hggep"]
 [ext_resource type="Script" uid="uid://dmneaqsn58oow" path="res://script/mort/death_zone.gd" id="2_wq51a"]
-[ext_resource type="Texture2D" uid="uid://b2vxm0x0gif17" path="res://sprite/player/Tiles.png" id="2_y8hb5"]
 [ext_resource type="PackedScene" uid="uid://dc15682v7x3de" path="res://scene/niv_1/first_upsider.tscn" id="3_5c07v"]
 [ext_resource type="Texture2D" uid="uid://jhjed5k3wior" path="res://sprite/niv_1/feuille.png" id="4_2jjpc"]
 [ext_resource type="Texture2D" uid="uid://buwkfikh0755v" path="res://sprite/niv_1/arbre_doré.png" id="4_nxphg"]
 [ext_resource type="Texture2D" uid="uid://gbxak3nwxebk" path="res://sprite/niv_1/platformetest.png" id="7_p2rd2"]
 [ext_resource type="Script" uid="uid://dnvp0pu3hiabp" path="res://script/world_1/dezoom.gd" id="9_s57ix"]
+[ext_resource type="PackedScene" uid="uid://dtke0whiosx15" path="res://scene/platforme_marker.tscn" id="12_n4eyw"]
 [ext_resource type="PackedScene" uid="uid://b2d0ctlschf4w" path="res://scene/niv_1/tiktik.tscn" id="14_brr2w"]
 [ext_resource type="PackedScene" uid="uid://b2gmv62n0rpg6" path="res://scene/niv_1/oiseau_monde_1.tscn" id="14_n4eyw"]
 
@@ -56,10 +56,7 @@ polygon = PackedVector2Array(11621, 578, 11679, 722, 12193, 725, 13222, 915, 120
 polygon = PackedVector2Array(13736, -33, 13527, 586, 15850, 767, 14994, -203)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1kcmt"]
-polygon = PackedVector2Array(2571, 170, 2587, 805, 4336, 676, 2877, -161)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n4eyw"]
-polygon = PackedVector2Array(7451, 776, 8350, 1881, 8337, 1047)
+polygon = PackedVector2Array(2571, 170, 2611, 1163, 4757, 865, 2877, -161)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_brr2w"]
 polygon = PackedVector2Array(12520, 1813, 12523, 2094, 12531, 2576)
@@ -366,10 +363,10 @@ wait_time = 4.0
 one_shot = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -2732.0
-offset_top = -1778.0
-offset_right = 17054.0
-offset_bottom = 7455.0
+offset_left = -2935.0
+offset_top = -1838.0
+offset_right = 16851.0
+offset_bottom = 7395.0
 color = Color(0.33662263, 0.3365891, 0.37428686, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -555,11 +552,6 @@ position = Vector2(-44, -1192)
 occluder = SubResource("OccluderPolygon2D_2jjpc")
 metadata/_edit_lock_ = true
 
-[node name="LightOccluder2D7" type="LightOccluder2D" parent="lumiere"]
-position = Vector2(-2341, 414)
-occluder = SubResource("OccluderPolygon2D_n4eyw")
-metadata/_edit_lock_ = true
-
 [node name="LightOccluder2D8" type="LightOccluder2D" parent="lumiere"]
 position = Vector2(-4674, 826)
 occluder = SubResource("OccluderPolygon2D_brr2w")
@@ -642,13 +634,8 @@ position = Vector2(2166.0002, 3568)
 scale = Vector2(10, 10)
 texture = ExtResource("2_bffma")
 
-[node name="platforme_marker" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.2627451)
+[node name="platforme_marker" parent="." instance=ExtResource("12_n4eyw")]
 position = Vector2(10788, -1418.9998)
-scale = Vector2(5, 5)
-texture = ExtResource("2_y8hb5")
-region_enabled = true
-region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
 
 [node name="oiseau" type="Node2D" parent="."]
 position = Vector2(-5, 5)
@@ -667,8 +654,13 @@ scale = Vector2(-6.0145044, 5.95163)
 position = Vector2(-2.992807, 0.16797735)
 scale = Vector2(-1.0046064, 0.99183774)
 
-[node name="tiktik" parent="." instance=ExtResource("14_brr2w")]
+[node name="monstre" type="Node2D" parent="."]
+
+[node name="tiktik" parent="monstre" instance=ExtResource("14_brr2w")]
 position = Vector2(6479, 2854)
+
+[node name="tiktik2" parent="monstre" instance=ExtResource("14_brr2w")]
+position = Vector2(4632.0005, 1254)
 
 [connection signal="timeout" from="platforme_timer" to="." method="_on_platforme_timer_timeout"]
 [connection signal="area_entered" from="death_and_respawn/death_zone/death_zone" to="death_and_respawn/death_zone/death_zone" method="_on_area_entered"]

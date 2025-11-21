@@ -7,23 +7,13 @@ var timer_start = false
 @onready var progress_bar: ProgressBar = $player/CanvasLayer/ProgressBar
 @onready var platforme_timer: Timer = $platforme_timer
 @onready var platforme_marker: Sprite2D = $platforme_marker
+@onready var camera_2d_world_1: Camera2D = $player/Camera2D_world1
 
 func _ready() -> void:
 	pass
 
 
 func _process(_delta: float) -> void:
-	
-	#platforme marker 
-	platforme_marker.position = get_global_mouse_position()
-	if GameManager.first_upsider == true and timer_start == false:
-		platforme_marker.visible = true
-		if GameManager.orientation_platforme == "horizontale":
-			platforme_marker.rotation = 0.0
-		if GameManager.orientation_platforme == "verticale":
-			platforme_marker.rotation = 1.57079637050629
-	else:
-		platforme_marker.visible = false
 	
 	#placage de platforme
 	if GameManager.first_upsider == true and timer_start == false:
@@ -34,11 +24,12 @@ func _process(_delta: float) -> void:
 				if GameManager.orientation_platforme == "verticale":
 					inst_platforme_verticale(get_global_mouse_position())
 				GameManager.nbr_platforme -= 1
-		if GameManager.nbr_platforme == 0:
+		if GameManager.nbr_platforme == 0 and GameManager.player_in_regen == false:
 			platforme_timer.start()
 			timer_start = true
 			progress_bar.visible = true
 	
+	#changement de l'orientation des platformes
 	if Input.is_action_just_pressed("orientation_platforme"):
 		if GameManager.orientation_platforme == "horizontale":
 			GameManager.orientation_platforme = "verticale"
@@ -47,6 +38,9 @@ func _process(_delta: float) -> void:
 	
 	#timer reload platforme
 	progress_bar.value = platforme_timer.wait_time - platforme_timer.time_left 
+
+	camera_2d_world_1.zoom = GameManager.zoom_camera
+
 
 #ajouter les platformes
 func inst_platforme_horizontale(pos):
@@ -58,6 +52,7 @@ func inst_platforme_verticale(pos):
 	instance.position = pos
 	add_child(instance)
 
+#remise des platformes apres la fin du timer
 func _on_platforme_timer_timeout() -> void:
 	progress_bar.value = 0
 	progress_bar.visible = false

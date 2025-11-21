@@ -48,7 +48,6 @@ visible = false
 position = Vector2(405.33105, 1.6550579)
 scale = Vector2(13.822845, 0.551722)
 energy = 0.6
-shadow_enabled = true
 texture = SubResource("GradientTexture2D_34sav")
 height = 35.0
 
