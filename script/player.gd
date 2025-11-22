@@ -65,7 +65,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y +=  get_good_gravity() * delta
 	elif is_dashing == true:
 		velocity.y = dash_gravity
-
+	
+	#limite de la vitesse quand le joueur tombe
+	if velocity.y >= 1600:
+		velocity.y = 1600
+	
+	
+	
+	
 	#coyote time
 	if is_on_floor() and can_jump == false and is_dashing == false:
 		can_jump = true
@@ -200,7 +207,7 @@ func degats():
 		position.x -= 20
 	elif velocity.x < 0:
 		position.x += 20
-	framefreeze(0.1, 0.5) #arret du temps pendnat le regen
+	GameManager.framefreeze(0.1, 0.5) #arret du temps pendnat le regen
 	collision_area.set_deferred("disabled", true) 
 	pv -=1
 	hit = false
@@ -221,9 +228,3 @@ func platforme_reload():
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	if _area.is_in_group("ennemie"):
 		degats()
-
-#freeze
-func framefreeze(timeScale: float, duration: float):
-	Engine.time_scale = timeScale
-	await get_tree().create_timer(duration * timeScale).timeout
-	Engine.time_scale = 1.0

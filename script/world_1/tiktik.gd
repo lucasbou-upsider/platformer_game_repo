@@ -59,6 +59,8 @@ func protect():
 func degats():
 	if protecte == false:
 		queue_free()
+	else :
+		GameManager.framefreeze(0.1,0.5)
 
 #arret des platformes dans la zone noir
 func _on_area_2d_area_entered(area: Area2D) -> void:

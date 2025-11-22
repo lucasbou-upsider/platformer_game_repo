@@ -584,9 +584,13 @@ position = Vector2(3711, -1730)
 [node name="death_zone" type="Area2D" parent="death_and_respawn/death_zone"]
 script = ExtResource("2_wq51a")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
-position = Vector2(-29, 206)
-polygon = PackedVector2Array(2947, 2773, 4218, 3380, 6925, 3690, 6098, 3790, 4168, 3552)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
+position = Vector2(5956, -461)
+polygon = PackedVector2Array(1858, 2783, 4475, 3005, 8076, 2577, 4015, 4036)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="death_and_respawn/death_zone/death_zone"]
+position = Vector2(-13, 886)
+polygon = PackedVector2Array(1858, 2783, 4475, 3005, 8076, 2577, 4015, 4036)
 
 [node name="dezoom" type="Node2D" parent="."]
 script = ExtResource("9_s57ix")
@@ -636,6 +640,8 @@ texture = ExtResource("2_bffma")
 
 [node name="platforme_marker" parent="." instance=ExtResource("12_n4eyw")]
 position = Vector2(10788, -1418.9998)
+scale = Vector2(5, 5)
+hframes = 38
 
 [node name="oiseau" type="Node2D" parent="."]
 position = Vector2(-5, 5)

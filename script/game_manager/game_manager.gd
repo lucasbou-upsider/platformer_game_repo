@@ -18,3 +18,10 @@ var respawn_point: Vector2 = Vector2(0 , 0 )
 
 #savoir si le joueur est mort
 var player_mort = false
+
+
+#freeze
+func framefreeze(timeScale: float, duration: float):
+	Engine.time_scale = timeScale
+	await get_tree().create_timer(duration * timeScale).timeout
+	Engine.time_scale = 1.0
