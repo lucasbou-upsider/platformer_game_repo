@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="2_pg2b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cnum"]
-size = Vector2(96, 30)
+size = Vector2(80, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2b5"]
 size = Vector2(92, 20)
@@ -236,7 +236,7 @@ position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_pg2b5")
 
 [node name="animated_sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(6, 6)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kps8w")
 animation = &"fondu"
 offset = Vector2(0, 2.5)
@@ -247,8 +247,8 @@ one_shot = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 visible = false
-position = Vector2(0, 517.00006)
-scale = Vector2(1.5000001, 16.625002)
+position = Vector2(9.536743e-07, 518.00006)
+scale = Vector2(1.25, 16.593752)
 energy = 0.6
 texture = SubResource("GradientTexture2D_pg2b5")
 height = 35.0
