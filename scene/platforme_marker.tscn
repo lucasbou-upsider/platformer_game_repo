@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtke0whiosx15"]
 
-[ext_resource type="Texture2D" uid="uid://b2vxm0x0gif17" path="res://sprite/player/Tiles.png" id="1_2cmho"]
+[ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="1_4n7uw"]
 [ext_resource type="Script" uid="uid://baxubxtyft73s" path="res://script/platforme_marker.gd" id="2_4n7uw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4n7uw"]
@@ -9,13 +9,14 @@ height = 16.4
 
 [node name="platforme_marker" type="Sprite2D"]
 modulate = Color(1, 1, 1, 0.2627451)
-scale = Vector2(5, 5)
-texture = ExtResource("1_2cmho")
-region_enabled = true
-region_rect = Rect2(32.148735, 80.1827, 15.505722, 7.475975)
+scale = Vector2(6, 6)
+texture = ExtResource("1_4n7uw")
+offset = Vector2(0, 2.5)
+hframes = 26
 script = ExtResource("2_4n7uw")
 
 [node name="Area2D" type="Area2D" parent="." groups=["platforme_marker"]]
+position = Vector2(-1.4901161e-08, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["platforme_marker"]]
 rotation = 1.5707964

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://drhrculk4rqm5"]
+[gd_scene load_steps=34 format=3 uid="uid://drhrculk4rqm5"]
 
 [ext_resource type="Script" uid="uid://c5t0lyyptsa1x" path="res://script/platforme_lumiere.gd" id="1_ordyb"]
 [ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="2_pg2b5"]
@@ -8,10 +8,6 @@ size = Vector2(96, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2b5"]
 size = Vector2(92, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p3u5g"]
-atlas = ExtResource("2_pg2b5")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p3j2d"]
 atlas = ExtResource("2_pg2b5")
@@ -37,10 +33,6 @@ region = Rect2(288, 0, 32, 32)
 atlas = ExtResource("2_pg2b5")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pg2b5"]
-atlas = ExtResource("2_pg2b5")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_kps8w"]
 atlas = ExtResource("2_pg2b5")
 region = Rect2(32, 0, 32, 32)
@@ -56,10 +48,6 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gs0t"]
 atlas = ExtResource("2_pg2b5")
 region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjgdj"]
-atlas = ExtResource("2_pg2b5")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21kav"]
 atlas = ExtResource("2_pg2b5")
@@ -129,9 +117,6 @@ region = Rect2(800, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p3u5g")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_p3j2d")
 }, {
 "duration": 1.0,
@@ -160,9 +145,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pg2b5")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_kps8w")
 }, {
 "duration": 1.0,
@@ -176,12 +158,9 @@ animations = [{
 }],
 "loop": false,
 "name": &"explosion",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qjgdj")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_21kav")
 }, {
@@ -232,7 +211,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"fondu",
-"speed": 7.0
+"speed": 9.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_wq51a"]
@@ -256,10 +235,11 @@ shape = SubResource("RectangleShape2D_8cnum")
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_pg2b5")
 
-[node name="Tiles" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 15)
+[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_kps8w")
+animation = &"fondu"
+offset = Vector2(0, 2.5)
 
 [node name="remove_platforme" type="Timer" parent="."]
 wait_time = 3.0
@@ -267,8 +247,8 @@ one_shot = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 visible = false
-position = Vector2(0, 516.5)
-scale = Vector2(1.1562499, 16.640627)
+position = Vector2(0, 517.00006)
+scale = Vector2(1.5000001, 16.625002)
 energy = 0.6
 texture = SubResource("GradientTexture2D_pg2b5")
 height = 35.0
