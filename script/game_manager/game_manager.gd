@@ -19,6 +19,8 @@ var respawn_point: Vector2 = Vector2(0 , 0 )
 #savoir si le joueur est mort
 var player_mort = false
 
+#position du joueur
+var position_player: Vector2 = Vector2(0, 0)
 
 #freeze
 func framefreeze(timeScale: float, duration: float):

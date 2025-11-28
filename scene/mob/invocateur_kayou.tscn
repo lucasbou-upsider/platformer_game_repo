@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvtu57h1swjru"]
+
+[ext_resource type="Script" uid="uid://dujp3d45yrmeh" path="res://script/mob/invocateur_kayou.gd" id="1_4k2li"]
+[ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/mob/zone_sombre.tscn" id="2_h8t2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbjf1"]
+size = Vector2(42, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbjf1"]
+radius = 32.003906
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4k2li"]
+radius = 317.0142
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4al62"]
+radius = 91.0
+
+[node name="invocateur_kayou" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_4k2li")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -32.5
+offset_top = -32.0
+offset_right = 10.166668
+offset_bottom = 10.333336
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27.5)
+shape = SubResource("RectangleShape2D_gbjf1")
+
+[node name="Area2D" type="Area2D" parent="." groups=["ennemie"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gbjf1")
+
+[node name="detecteur_invoc" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detecteur_invoc"]
+shape = SubResource("CircleShape2D_4k2li")
+
+[node name="reload" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="zone_sombre" parent="." instance=ExtResource("2_h8t2c")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone_sombre"]
+shape = SubResource("CircleShape2D_4al62")
+
+[connection signal="area_entered" from="detecteur_invoc" to="." method="_on_detecteur_invoc_area_entered"]
+[connection signal="area_exited" from="detecteur_invoc" to="." method="_on_detecteur_invoc_area_exited"]
+[connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]

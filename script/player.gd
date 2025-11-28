@@ -70,8 +70,8 @@ func _physics_process(delta: float) -> void:
 	if velocity.y >= 1600:
 		velocity.y = 1600
 	
-	
-	
+	#savoir la position du joueur
+	GameManager.position_player = global_position
 	
 	#coyote time
 	if is_on_floor() and can_jump == false and is_dashing == false:

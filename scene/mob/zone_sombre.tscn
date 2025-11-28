@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxpo0i1cac3rs"]
+
+[ext_resource type="Script" uid="uid://b64o43v4aq0ql" path="res://script/mob/zone_sombre.gd" id="1_k2nr5"]
+
+[node name="zone_sombre" type="Area2D"]
+disable_mode = 2
+script = ExtResource("1_k2nr5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

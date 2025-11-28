@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://c3wdwywvpmmbq"]
+[gd_scene load_steps=34 format=4 uid="uid://c3wdwywvpmmbq"]
 
 [ext_resource type="Script" uid="uid://dbjdylm66xyt4" path="res://script/niv.gd" id="1_77eqh"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player.tscn" id="1_j1enk"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dtke0whiosx15" path="res://scene/platforme_marker.tscn" id="12_n4eyw"]
 [ext_resource type="PackedScene" uid="uid://b2d0ctlschf4w" path="res://scene/niv_1/tiktik.tscn" id="14_brr2w"]
 [ext_resource type="PackedScene" uid="uid://b2gmv62n0rpg6" path="res://scene/niv_1/oiseau_monde_1.tscn" id="14_n4eyw"]
+[ext_resource type="PackedScene" uid="uid://dvtu57h1swjru" path="res://scene/mob/invocateur_kayou.tscn" id="15_brr2w"]
 
 [sub_resource type="Environment" id="Environment_7x7m7"]
 background_mode = 3
@@ -667,6 +668,10 @@ position = Vector2(6479, 2854)
 
 [node name="tiktik2" parent="monstre" instance=ExtResource("14_brr2w")]
 position = Vector2(4632.0005, 1254)
+
+[node name="invocateur_kayou" parent="." instance=ExtResource("15_brr2w")]
+position = Vector2(3938, 2658)
+scale = Vector2(1, 1)
 
 [connection signal="timeout" from="platforme_timer" to="." method="_on_platforme_timer_timeout"]
 [connection signal="area_entered" from="death_and_respawn/death_zone/death_zone" to="death_and_respawn/death_zone/death_zone" method="_on_area_entered"]
