@@ -21,8 +21,8 @@ var player_mort = false
 #position du joueur
 var position_player: Vector2 = Vector2(0, 0)
 
-#le nbr de la sortie que le joueur a pris 
-var sortie = 0
+#la scene par laquelle le joueur viens de sortir
+var scene 
 
 
 #freeze
