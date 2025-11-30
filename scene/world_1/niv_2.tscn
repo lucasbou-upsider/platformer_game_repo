@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://k2uipnms5rk4"]
+[gd_scene load_steps=7 format=4 uid="uid://k2uipnms5rk4"]
 
 [ext_resource type="Texture2D" uid="uid://gbxak3nwxebk" path="res://sprite/niv_1/platformetest.png" id="1_yuspu"]
 [ext_resource type="PackedScene" uid="uid://dtke0whiosx15" path="res://scene/player/platforme_marker.tscn" id="2_lwric"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player/player.tscn" id="3_7taf6"]
 [ext_resource type="Texture2D" uid="uid://jhjed5k3wior" path="res://sprite/niv_1/feuille.png" id="4_q03ej"]
-[ext_resource type="PackedScene" uid="uid://cqpa888m0ac71" path="res://scene/scene_transition.tscn" id="5_3a441"]
-[ext_resource type="PackedScene" uid="uid://c3wdwywvpmmbq" path="res://scene/world_1/niv_1.tscn" id="6_gej4e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7taf6"]
 texture = ExtResource("1_yuspu")
@@ -176,9 +174,6 @@ physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 255
 sources/3 = SubResource("TileSetAtlasSource_7taf6")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n4i7v"]
-radius = 245.17749
-
 [node name="niv_2" type="Node2D"]
 
 [node name="sprite" type="TileMapLayer" parent="."]
@@ -213,12 +208,3 @@ emission_shape = 3
 emission_rect_extents = Vector2(1000, 1)
 gravity = Vector2(1000, 800)
 scale_amount_max = 3.0
-
-[node name="scene_transition" parent="." instance=ExtResource("5_3a441")]
-position = Vector2(3349, 1880)
-scene = ExtResource("6_gej4e")
-current_scene = null
-distance_sortie = 244
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
-shape = SubResource("CircleShape2D_n4i7v")
