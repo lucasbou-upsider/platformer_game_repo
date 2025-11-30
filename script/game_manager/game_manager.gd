@@ -6,7 +6,6 @@ var orientation_platforme = "horizontale"
 #zoom de la camera
 var zoom_camera: Vector2 = Vector2(0.7, 0.7)
 
-
 #quand le joueur est en train de se regen
 var player_in_regen = false
 
@@ -21,6 +20,10 @@ var player_mort = false
 
 #position du joueur
 var position_player: Vector2 = Vector2(0, 0)
+
+#le nbr de la sortie que le joueur a pris 
+var sortie = 0
+
 
 #freeze
 func framefreeze(timeScale: float, duration: float):

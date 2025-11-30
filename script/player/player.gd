@@ -175,7 +175,6 @@ func flip():
 		scale.x = scale.y * -1
 		wall_x_force = -250.0
 
-
 #gravity saut
 func get_good_gravity():
 	if velocity.y < 0:
@@ -207,9 +206,11 @@ func degats():
 		position.x -= 20
 	elif velocity.x < 0:
 		position.x += 20
-	GameManager.framefreeze(0.1, 0.5) #arret du temps pendnat le regen
+	
 	collision_area.set_deferred("disabled", true) 
 	pv -=1
+	if pv != 0:
+		GameManager.framefreeze(0.1, 0.5) #arret du temps pendnat le regen
 	hit = false
 	await get_tree().create_timer(invulnerability_time).timeout #temps de l'invulnerabilité du joueur
 	collision_area.set_deferred("disabled", false) 

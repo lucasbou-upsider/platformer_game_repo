@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2d0ctlschf4w"]
 
-[ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/world_1/tiktik.gd" id="1_gv45o"]
+[ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/mob/tiktik.gd" id="1_gv45o"]
 [ext_resource type="Texture2D" uid="uid://hfw8y2cwy3t5" path="res://sprite/niv_1/titik.png" id="1_mur5q"]
-[ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/mob/zone_sombre.tscn" id="3_6gwfl"]
+[ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="3_6gwfl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gv45o"]
 atlas = ExtResource("1_mur5q")

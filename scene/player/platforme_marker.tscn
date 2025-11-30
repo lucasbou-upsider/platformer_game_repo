@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtke0whiosx15"]
 
 [ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="1_4n7uw"]
-[ext_resource type="Script" uid="uid://baxubxtyft73s" path="res://script/platforme_marker.gd" id="2_4n7uw"]
+[ext_resource type="Script" uid="uid://baxubxtyft73s" path="res://script/player/platforme_marker.gd" id="2_4n7uw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4n7uw"]
 radius = 3.6

@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://xf7lfbxevhid"]
 
-[ext_resource type="Script" uid="uid://bt4udvhil2gle" path="res://script/world_1/kayou.gd" id="1_1x8uo"]
+[ext_resource type="Script" uid="uid://bt4udvhil2gle" path="res://script/world_1/kayou.gd" id="1_8ejra"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1x8uo"]
 radius = 44.011364
 
 [node name="kayou" type="RigidBody2D"]
+mass = 3.0
 lock_rotation = true
-script = ExtResource("1_1x8uo")
+script = ExtResource("1_8ejra")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -43.0

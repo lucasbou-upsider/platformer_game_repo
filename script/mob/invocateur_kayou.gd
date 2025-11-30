@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-var kayou = preload("res://scene/niv_1/kayou.tscn")
+var kayou = preload("res://scene/world_1/kayou.tscn")
 var can_invocate = true
 var is_in_area = false
 var in_invocate = false
-var vulnebilarity_moment = 4
+var vulnebilarity_moment = 3
 @onready var reload: Timer = $reload
 @onready var color_rect: ColorRect = $ColorRect
 
@@ -28,10 +28,8 @@ func _physics_process(delta: float) -> void:
 	
 func move():
 	velocity.x = 10
-	print("+")
 	await get_tree().create_timer(6).timeout
 	velocity.x = -10
-	print("-")
 	await get_tree().create_timer(6).timeout
 	move()
 
@@ -58,7 +56,6 @@ func _on_detecteur_invoc_area_exited(area: Area2D) -> void:
 		print("area sorted")
 #reload de l'invoc 
 func _on_reload_timeout() -> void:
-	print("can_invocate")
 	can_invocate = true
 
 #degats

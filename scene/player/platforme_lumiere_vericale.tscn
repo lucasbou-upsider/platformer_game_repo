@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://ihi33xnqqmb"]
 
-[ext_resource type="Script" uid="uid://c5t0lyyptsa1x" path="res://script/platforme_lumiere.gd" id="1_34sav"]
+[ext_resource type="Script" uid="uid://c5t0lyyptsa1x" path="res://script/player/platforme_lumiere.gd" id="1_34sav"]
 [ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="2_34sav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cnum"]

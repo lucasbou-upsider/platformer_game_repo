@@ -1,7 +1,7 @@
 extends Node2D
 
-var isntance_platforme_lumiere_verticale = preload("res://scene/platforme_lumiere_vericale.tscn")
-var isntance_platforme_lumiere_horizontale = preload("res://scene/platforme_lumiere_horizontale.tscn")
+var isntance_platforme_lumiere_verticale = preload("res://scene/player/platforme_lumiere_vericale.tscn")
+var isntance_platforme_lumiere_horizontale = preload("res://scene/player/platforme_lumiere_horizontale.tscn")
 @export var temps_platforme_respawn = 3
 var timer_start = false
 @onready var progress_bar: ProgressBar = $player/CanvasLayer/ProgressBar

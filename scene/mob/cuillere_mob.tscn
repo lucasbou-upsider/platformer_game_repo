@@ -1,62 +1,62 @@
 [gd_scene load_steps=20 format=3 uid="uid://bj4o2ek3xjc4s"]
 
-[ext_resource type="Script" uid="uid://dc6ontjcio8ed" path="res://script/world_1/cuillere_mob.gd" id="1_rngmc"]
-[ext_resource type="Texture2D" uid="uid://7crroqlwvn" path="res://sprite/niv_1/cuillere_mob.png" id="2_liqp5"]
+[ext_resource type="Script" uid="uid://dc6ontjcio8ed" path="res://script/mob/cuillere_mob.gd" id="1_34yja"]
+[ext_resource type="Texture2D" uid="uid://7crroqlwvn" path="res://sprite/niv_1/cuillere_mob.png" id="2_fovci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbd6c"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(128, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cnq5p"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(192, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfyir"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(256, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrnvi"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(320, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djvtj"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(384, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rngmc"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(448, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_liqp5"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(0, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8pat"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(64, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ntd7e"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(512, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cweax"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(576, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xe6bq"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(640, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3h83j"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(704, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6uqw"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(768, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcdgh"]
-atlas = ExtResource("2_liqp5")
+atlas = ExtResource("2_fovci")
 region = Rect2(832, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbd6c"]
@@ -138,7 +138,7 @@ size = Vector2(24.714289, 26.571426)
 scale = Vector2(7, 7)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_rngmc")
+script = ExtResource("1_34yja")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-14, -11)

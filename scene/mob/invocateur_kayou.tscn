@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvtu57h1swjru"]
 
 [ext_resource type="Script" uid="uid://dujp3d45yrmeh" path="res://script/mob/invocateur_kayou.gd" id="1_4k2li"]
-[ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/mob/zone_sombre.tscn" id="2_h8t2c"]
+[ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="2_h8t2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbjf1"]
 size = Vector2(42, 8)
@@ -10,7 +10,7 @@ size = Vector2(42, 8)
 radius = 32.003906
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4k2li"]
-radius = 317.0142
+radius = 571.63666
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4al62"]
 radius = 91.0

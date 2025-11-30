@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://byl8y7edxwee2"]
 
-[ext_resource type="Script" uid="uid://rlls30862rht" path="res://script/player.gd" id="1_xo3ru"]
+[ext_resource type="Script" uid="uid://rlls30862rht" path="res://script/player/player.gd" id="1_xo3ru"]
 [ext_resource type="Texture2D" uid="uid://bx1qndd3qv6xk" path="res://sprite/player/lifetest.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://i5o04onixrx" path="res://sprite/player/symbol platforme.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/niv_1/lumiere_godot.jpeg" id="2_hjaqi"]

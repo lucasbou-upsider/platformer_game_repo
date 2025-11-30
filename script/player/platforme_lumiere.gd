@@ -18,10 +18,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("attaque"):
 		if attaque == false and is_desintegration == false:
-			animated_sprite.play("attaque")
 			point_light_2d_2.visible = true
 	if Input.is_action_just_released("attaque"):
 		if is_desintegration == false:
+			animated_sprite.play("attaque")
 			point_light_2d_2.visible = false
 			attaque = true
 			activation_attaque()
