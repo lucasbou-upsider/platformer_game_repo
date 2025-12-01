@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://c3wdwywvpmmbq"]
+[gd_scene load_steps=35 format=4 uid="uid://c3wdwywvpmmbq"]
 
 [ext_resource type="Script" uid="uid://dbjdylm66xyt4" path="res://script/niv.gd" id="1_77eqh"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player/player.tscn" id="1_j1enk"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://b2d0ctlschf4w" path="res://scene/mob/tiktik.tscn" id="14_brr2w"]
 [ext_resource type="PackedScene" uid="uid://b2gmv62n0rpg6" path="res://scene/world_1/oiseau_monde_1.tscn" id="14_n4eyw"]
 [ext_resource type="PackedScene" uid="uid://dvtu57h1swjru" path="res://scene/mob/invocateur_kayou.tscn" id="15_brr2w"]
-[ext_resource type="PackedScene" uid="uid://cqpa888m0ac71" path="res://scene/scene_transition.tscn" id="16_jv7vk"]
 
 [sub_resource type="Environment" id="Environment_7x7m7"]
 background_mode = 3
@@ -357,8 +356,9 @@ _data = {
 &"dezoom": SubResource("Animation_n4eyw")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jv7vk"]
-radius = 80.00625
+[sub_resource type="Gradient" id="Gradient_igpef"]
+offsets = PackedFloat32Array(0.2987805, 0.9878049)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="niv_1" type="Node2D"]
 script = ExtResource("1_77eqh")
@@ -621,20 +621,6 @@ aceleration = 0.5
 zoom = Vector2(0.7, 0.7)
 position_smoothing_enabled = true
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="player"]
-position = Vector2(-1242, -766.99994)
-rotation = -0.6929684
-scale = Vector2(0.9999999, 0.9999999)
-amount = 50
-texture = ExtResource("4_2jjpc")
-lifetime = 2.0
-preprocess = 0.07
-speed_scale = 0.5
-emission_shape = 3
-emission_rect_extents = Vector2(1000, 1)
-gravity = Vector2(1000, 800)
-scale_amount_max = 3.0
-
 [node name="first_upsider" parent="." instance=ExtResource("3_5c07v")]
 position = Vector2(4409, 2933)
 
@@ -661,9 +647,9 @@ position = Vector2(3698, 2607)
 position = Vector2(8274, 1571.0002)
 scale = Vector2(-6.0145044, 5.95163)
 
-[node name="oiseau_monde4" parent="oiseau/oiseau_monde4" instance=ExtResource("14_n4eyw")]
-position = Vector2(-2.992807, 0.16797735)
-scale = Vector2(-1.0046064, 0.99183774)
+[node name="oiseau_monde5" parent="oiseau" instance=ExtResource("14_n4eyw")]
+position = Vector2(8292, 1572)
+scale = Vector2(6.0422096, 5.9030514)
 
 [node name="monstre" type="Node2D" parent="."]
 
@@ -674,17 +660,35 @@ position = Vector2(6479, 2854)
 position = Vector2(4632.0005, 1254)
 
 [node name="invocateur_kayou" parent="." instance=ExtResource("15_brr2w")]
-position = Vector2(3938, 2658)
+position = Vector2(3884, 1320)
 scale = Vector2(1, 1)
 
-[node name="scene_transition" parent="." instance=ExtResource("16_jv7vk")]
-position = Vector2(5574, 2988)
-scene = "res://scene/world_1/niv_2.tscn"
-curent_scene = "res://scene/world_1/niv_1.tscn"
-direction = 140
+[node name="particles" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
-shape = SubResource("CircleShape2D_jv7vk")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="particles"]
+modulate = Color(1, 1, 1, 0.27100003)
+position = Vector2(6800, 2462)
+amount = 1600
+emission_shape = 3
+emission_rect_extents = Vector2(10000, 8000)
+gravity = Vector2(0, -50)
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_igpef")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="particles"]
+modulate = Color(1, 1, 1, 0.74100006)
+position = Vector2(-1059, -1772)
+rotation = -0.6929684
+scale = Vector2(0.9999998, 0.9999998)
+amount = 500
+texture = ExtResource("4_2jjpc")
+lifetime = 5.0
+preprocess = 3.0
+speed_scale = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(5000, 1)
+gravity = Vector2(1000, 800)
+scale_amount_max = 3.0
 
 [connection signal="timeout" from="platforme_timer" to="." method="_on_platforme_timer_timeout"]
 [connection signal="area_entered" from="death_and_respawn/death_zone/death_zone" to="death_and_respawn/death_zone/death_zone" method="_on_area_entered"]

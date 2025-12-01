@@ -210,7 +210,7 @@ func degats():
 	collision_area.set_deferred("disabled", true) 
 	pv -=1
 	if pv != 0:
-		GameManager.framefreeze(0.1, 0.5) #arret du temps pendnat le regen
+		GameManager.framefreeze(0.1, 0.3) #arret du temps pendnat le regen
 	hit = false
 	await get_tree().create_timer(invulnerability_time).timeout #temps de l'invulnerabilité du joueur
 	collision_area.set_deferred("disabled", false) 

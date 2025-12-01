@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://drhrculk4rqm5"]
+[gd_scene load_steps=35 format=3 uid="uid://drhrculk4rqm5"]
 
 [ext_resource type="Script" uid="uid://c5t0lyyptsa1x" path="res://script/player/platforme_lumiere.gd" id="1_ordyb"]
 [ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="2_pg2b5"]
@@ -113,6 +113,10 @@ region = Rect2(768, 0, 32, 32)
 atlas = ExtResource("2_pg2b5")
 region = Rect2(800, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j180"]
+atlas = ExtResource("2_pg2b5")
+region = Rect2(1184, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kps8w"]
 animations = [{
 "frames": [{
@@ -208,10 +212,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xrvej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j180")
 }],
 "loop": false,
 "name": &"fondu",
-"speed": 9.0
+"speed": 10.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_wq51a"]
