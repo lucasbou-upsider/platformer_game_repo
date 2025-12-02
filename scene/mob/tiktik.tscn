@@ -51,13 +51,27 @@ size = Vector2(8, 4.800001)
 [sub_resource type="CircleShape2D" id="CircleShape2D_gv45o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gwfl"]
-radius = 30.600653
+radius = 28.20638
 
 [node name="tiktik" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_gv45o")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+amount = 100
+lifetime = 3.0
+speed_scale = 0.3
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 28.99
+gravity = Vector2(0, 0)
+orbit_velocity_min = -0.2
+orbit_velocity_max = 0.2
+scale_amount_min = 0.5
+color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12.2)
@@ -72,18 +86,6 @@ shape = SubResource("RectangleShape2D_gv45o")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-12.599999, -7.6)
 target_position = Vector2(0.19999981, 14.799999)
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-scale = Vector2(0.99999994, 0.99999994)
-amount = 50
-lifetime = 3.0
-speed_scale = 0.3
-emission_shape = 1
-emission_sphere_radius = 28.99
-gravity = Vector2(0, -10)
-scale_amount_min = 2.0
-scale_amount_max = 4.0
-color = Color(0, 0, 0, 1)
 
 [node name="degats" type="Area2D" parent="." groups=["ennemie"]]
 metadata/_edit_group_ = true

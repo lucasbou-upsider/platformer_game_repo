@@ -668,10 +668,11 @@ scale = Vector2(1, 1)
 [node name="CPUParticles2D" type="CPUParticles2D" parent="particles"]
 modulate = Color(1, 1, 1, 0.27100003)
 position = Vector2(6800, 2462)
-amount = 1600
+amount = 1200
+lifetime = 10.0
 emission_shape = 3
 emission_rect_extents = Vector2(10000, 8000)
-gravity = Vector2(0, -50)
+gravity = Vector2(0, -5)
 scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_igpef")
 
