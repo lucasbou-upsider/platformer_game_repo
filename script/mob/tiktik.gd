@@ -5,11 +5,12 @@ var facing_right
 var SPEED = -50
 var protecte = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	aleatoire_protect()
 	animated_sprite_2d.play("walk")
-
+	animation_player.play("RESET")
 
 
 func _physics_process(delta: float) -> void:
@@ -51,6 +52,7 @@ func aleatoire_protect():
 #quand le mob se protege
 func protect():
 	protecte = true
+	animation_player.play("flash")
 	await get_tree().create_timer(2).timeout
 	protecte = false
 	aleatoire_protect()

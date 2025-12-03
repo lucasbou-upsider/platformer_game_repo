@@ -1,8 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2d0ctlschf4w"]
+[gd_scene load_steps=17 format=3 uid="uid://b2d0ctlschf4w"]
 
 [ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/mob/tiktik.gd" id="1_gv45o"]
 [ext_resource type="Texture2D" uid="uid://hfw8y2cwy3t5" path="res://sprite/niv_1/titik.png" id="1_mur5q"]
+[ext_resource type="Shader" uid="uid://dsat5ff8lsdkw" path="res://flash.gdshader" id="2_witf7"]
 [ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="3_6gwfl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_se5do"]
+resource_local_to_scene = true
+shader = ExtResource("2_witf7")
+shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
+shader_parameter/hit_flash_on = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gv45o"]
 atlas = ExtResource("1_mur5q")
@@ -53,6 +60,43 @@ size = Vector2(8, 4.800001)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gwfl"]
 radius = 28.20638
 
+[sub_resource type="Animation" id="Animation_se5do"]
+resource_name = "flash"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/hit_flash_on")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6dveu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/hit_flash_on")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lnsas"]
+_data = {
+&"RESET": SubResource("Animation_6dveu"),
+&"flash": SubResource("Animation_se5do")
+}
+
 [node name="tiktik" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 collision_layer = 2
@@ -74,9 +118,11 @@ scale_amount_min = 0.5
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_se5do")
 position = Vector2(0, -12.2)
 sprite_frames = SubResource("SpriteFrames_itpsw")
 animation = &"walk"
+frame_progress = 0.5775418
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.4)
@@ -97,3 +143,8 @@ shape = SubResource("CircleShape2D_gv45o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zone_sombre"]
 shape = SubResource("CircleShape2D_6gwfl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lnsas")
+}
