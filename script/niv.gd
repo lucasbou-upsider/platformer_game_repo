@@ -7,7 +7,6 @@ var timer_start = false
 @onready var progress_bar: ProgressBar = $player/CanvasLayer/ProgressBar
 @onready var platforme_timer: Timer = $platforme_timer
 @onready var platforme_marker: Sprite2D = $platforme_marker
-@onready var camera_2d_world_1: Camera2D = $player/Camera2D_world1
 
 func _ready() -> void:
 	pass
@@ -39,7 +38,6 @@ func _process(_delta: float) -> void:
 	#timer reload platforme
 	progress_bar.value = platforme_timer.wait_time - platforme_timer.time_left 
 
-	camera_2d_world_1.zoom = GameManager.zoom_camera
 
 
 #ajouter les platformes
