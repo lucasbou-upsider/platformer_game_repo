@@ -60,6 +60,21 @@ size = Vector2(8, 4.800001)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gwfl"]
 radius = 28.20638
 
+[sub_resource type="Animation" id="Animation_6dveu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/hit_flash_on")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_se5do"]
 resource_name = "flash"
 length = 0.3
@@ -76,21 +91,6 @@ tracks/0/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_6dveu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/hit_flash_on")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lnsas"]
 _data = {
 &"RESET": SubResource("Animation_6dveu"),
@@ -98,7 +98,7 @@ _data = {
 }
 
 [node name="tiktik" type="CharacterBody2D"]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_gv45o")

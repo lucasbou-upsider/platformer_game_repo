@@ -18,6 +18,14 @@ config/icon="res://icon.svg"
 
 GameManager="*res://script/game_manager/game_manager.gd"
 
+[file_customization]
+
+folder_colors={
+"res://scene/": "green",
+"res://script/": "purple",
+"res://sprite/": "orange"
+}
+
 [global_group]
 
 player=""

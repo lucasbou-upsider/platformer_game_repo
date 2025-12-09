@@ -1,0 +1,203 @@
+[gd_scene load_steps=7 format=3 uid="uid://k2uipnms5rk4"]
+
+[ext_resource type="Script" uid="uid://dbjdylm66xyt4" path="res://script/niv.gd" id="1_r8qng"]
+[ext_resource type="Texture2D" uid="uid://gbxak3nwxebk" path="res://sprite/niv_1/platformetest.png" id="2_o0dke"]
+[ext_resource type="PackedScene" uid="uid://dtke0whiosx15" path="res://scene/player/platforme_marker.tscn" id="3_66p4o"]
+[ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player/player.tscn" id="4_mmcn8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7taf6"]
+texture = ExtResource("2_o0dke")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -6.115196, 8, -5.935339, -1.6187286, -8, -1.6187286)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.1583042, -8, -1.7985859)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.1583042, -8, -1.7985859)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.1583042, -8, -1.7985859)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.1583042, -8, -1.7985859)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.3381624, 5.935339, -1.978445, 6.115198, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+1:6/0 = 0
+2:6/0 = 0
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+4:6/0 = 0
+3:6/0 = 0
+5:7/0 = 0
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.036045, -8, 4.856186)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.036045, -8, 4.856186)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.036045, -8, 4.856186)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.036045, -8, 4.856186)
+0:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+5:9/0 = 0
+5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+4:9/0 = 0
+3:9/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+0:9/0 = 0
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.036045, -8, 4.856186)
+8:8/0 = 0
+9:8/0 = 0
+9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.036045, -8, 4.856186)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:9/0 = 0
+7:10/0 = 0
+7:11/0 = 0
+6:11/0 = 0
+5:11/0 = 0
+4:11/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+6:9/0 = 0
+6:8/0 = 0
+10:8/0 = 0
+10:9/0 = 0
+10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:10/0 = 0
+10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.6763268, -8, 8, -8, 8, 8, -4.4964676, 8)
+10:11/0 = 0
+10:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.6763268, -8, 8, -8, 8, 8, 0.8992939, 3.057598)
+11:11/0 = 0
+11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 5.036045, -8, 4.856186)
+11:10/0 = 0
+11:9/0 = 0
+11:8/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+4:4/0 = 0
+4:5/0 = 0
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+5:5/next_alternative_id = 2
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -6.115196, 8, -5.935339, -1.6187286, -8, -1.6187286)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.3381624, 5.935339, -1.978445, 6.115198, 8, -8, 8)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+11:3/0 = 0
+11:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+10:2/0 = 0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+10:3/0 = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+11:5/0 = 0
+11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+11:6/0 = 0
+11:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115198, -8, 6.115198, 8, -8, 8)
+11:7/0 = 0
+10:7/0 = 0
+10:6/0 = 0
+10:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+10:5/0 = 0
+10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -8, 8, -8, 8, 8, -5.75548, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_q03ej"]
+physics_layer_0/collision_layer = 255
+physics_layer_0/collision_mask = 255
+sources/3 = SubResource("TileSetAtlasSource_7taf6")
+
+[node name="niv_2" type="Node2D"]
+script = ExtResource("1_r8qng")
+
+[node name="platforme_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="sprite" type="TileMapLayer" parent="."]
+scale = Vector2(5.0006585, 5)
+tile_set = SubResource("TileSet_q03ej")
+
+[node name="platforme_marker" parent="." instance=ExtResource("3_66p4o")]
+position = Vector2(10547.001, -2883)
+scale = Vector2(5, 5)
+hframes = 38
+
+[node name="player" parent="." instance=ExtResource("4_mmcn8")]
+position = Vector2(313, 128)
+deceleration = 0.5
+aceleration = 0.5
+
+[node name="Camera2D_world1" type="Camera2D" parent="."]
+position = Vector2(1431, 1251)
+zoom = Vector2(0.7, 0.7)
+position_smoothing_enabled = true
+
+[connection signal="timeout" from="platforme_timer" to="." method="_on_platforme_timer_timeout"]

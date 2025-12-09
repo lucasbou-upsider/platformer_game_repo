@@ -3,8 +3,10 @@ extends Node
 var nbr_platforme = 0
 var orientation_platforme = "horizontale"
 
-#zoom de la camera
-var zoom_camera: Vector2 = Vector2(0.7, 0.7)
+#camera
+var zoom_camera: Vector2 = Vector2(0.8, 0.8)
+var CameraFocusOnPlayer = true
+var position_camera: Vector2
 
 #quand le joueur est en train de se regen
 var player_in_regen = false
