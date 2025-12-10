@@ -132,6 +132,12 @@ shape = SubResource("RectangleShape2D_gv45o")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-12.599999, -7.6)
 target_position = Vector2(0.19999981, 14.799999)
+collision_mask = 4
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(-4, 0)
+target_position = Vector2(-13, 0)
+collision_mask = 4
 
 [node name="degats" type="Area2D" parent="." groups=["ennemie"]]
 metadata/_edit_group_ = true

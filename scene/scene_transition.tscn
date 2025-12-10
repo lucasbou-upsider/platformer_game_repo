@@ -1,8 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqpa888m0ac71"]
+[gd_scene load_steps=6 format=3 uid="uid://cqpa888m0ac71"]
 
 [ext_resource type="Script" uid="uid://dexnhe3x4lyt0" path="res://script/scene_transition.gd" id="1_6xfxc"]
 
+[sub_resource type="Animation" id="Animation_x0d8i"]
+resource_name = "part"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7iavl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pyuau"]
+resource_name = "viens"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ruca2"]
+_data = {
+&"RESET": SubResource("Animation_7iavl"),
+&"part": SubResource("Animation_x0d8i"),
+&"viens": SubResource("Animation_pyuau")
+}
+
 [node name="scene_transition" type="Area2D"]
 script = ExtResource("1_6xfxc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_ruca2")
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -181.0
+offset_top = -177.0
+offset_right = 1328.0
+offset_bottom = 771.0
+color = Color(0, 0, 0, 0)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

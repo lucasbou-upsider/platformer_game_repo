@@ -6,6 +6,7 @@ var SPEED = -50
 var protecte = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
 
 func _ready() -> void:
 	aleatoire_protect()
@@ -19,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	#flip
-	if !ray_cast_2d.is_colliding() && is_on_floor():
+	if !ray_cast_2d.is_colliding() && is_on_floor()  or ray_cast_2d_2.is_colliding() && is_on_floor():
 		flip()
 
 	#vitesse de déplacement
