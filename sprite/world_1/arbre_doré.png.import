@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7crroqlwvn"
-path="res://.godot/imported/cuillere_mob.png-2d79afa3b9f746a45137b7c250003023.ctex"
+uid="uid://buwkfikh0755v"
+path="res://.godot/imported/arbre_doré.png-cd6884597824be125397c25cbd3ac7e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/cuillere_mob.png"
-dest_files=["res://.godot/imported/cuillere_mob.png-2d79afa3b9f746a45137b7c250003023.ctex"]
+source_file="res://sprite/world_1/arbre_doré.png"
+dest_files=["res://.godot/imported/arbre_doré.png-cd6884597824be125397c25cbd3ac7e9.ctex"]
 
 [params]
 

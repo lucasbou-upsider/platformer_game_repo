@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://b2d0ctlschf4w"]
 
 [ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/mob/tiktik.gd" id="1_gv45o"]
-[ext_resource type="Texture2D" uid="uid://hfw8y2cwy3t5" path="res://sprite/niv_1/titik.png" id="1_mur5q"]
+[ext_resource type="Texture2D" uid="uid://hfw8y2cwy3t5" path="res://sprite/world_1/titik.png" id="1_mur5q"]
 [ext_resource type="Shader" uid="uid://dsat5ff8lsdkw" path="res://flash.gdshader" id="2_witf7"]
 [ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="3_6gwfl"]
 

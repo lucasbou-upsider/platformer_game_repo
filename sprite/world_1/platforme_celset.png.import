@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxp5dnnjr0346"
-path="res://.godot/imported/arbre_test.png-b0707fac953ab34a83c8b6d5bed7d4da.ctex"
+uid="uid://dyymilvokv3d1"
+path="res://.godot/imported/platforme_celset.png-9592f06ccfadf17641ab646b900ec939.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/arbre_test.png"
-dest_files=["res://.godot/imported/arbre_test.png-b0707fac953ab34a83c8b6d5bed7d4da.ctex"]
+source_file="res://sprite/world_1/platforme_celset.png"
+dest_files=["res://.godot/imported/platforme_celset.png-9592f06ccfadf17641ab646b900ec939.ctex"]
 
 [params]
 

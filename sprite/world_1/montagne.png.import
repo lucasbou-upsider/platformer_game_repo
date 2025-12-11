@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8oi17hkqf031"
-path="res://.godot/imported/platforme_bois1 (2).png-9aebc8a19b08db50b037e7571ab96478.ctex"
+uid="uid://dnjrmj3otv4yd"
+path="res://.godot/imported/montagne.png-993705f42979441ee101750e8c576196.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/platforme_bois1 (2).png"
-dest_files=["res://.godot/imported/platforme_bois1 (2).png-9aebc8a19b08db50b037e7571ab96478.ctex"]
+source_file="res://sprite/world_1/montagne.png"
+dest_files=["res://.godot/imported/montagne.png-993705f42979441ee101750e8c576196.ctex"]
 
 [params]
 

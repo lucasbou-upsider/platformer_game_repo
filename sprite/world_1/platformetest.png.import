@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfhs3rib6588s"
-path="res://.godot/imported/platforme_celset.png-4bf8f26eaa0ff1fcdf43cdcd9770ed94.ctex"
+uid="uid://gbxak3nwxebk"
+path="res://.godot/imported/platformetest.png-9a938c94af35ca85c82063160bb595f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/platforme_celset.png"
-dest_files=["res://.godot/imported/platforme_celset.png-4bf8f26eaa0ff1fcdf43cdcd9770ed94.ctex"]
+source_file="res://sprite/world_1/platformetest.png"
+dest_files=["res://.godot/imported/platformetest.png-9a938c94af35ca85c82063160bb595f6.ctex"]
 
 [params]
 

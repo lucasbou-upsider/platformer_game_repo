@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f6gxnl1mejk6"
-path="res://.godot/imported/pilier_biome1.png-ae15605ff76e1353c7aeec2166e88af4.ctex"
+uid="uid://khba3eurdjiy"
+path="res://.godot/imported/stalactite-sheet.png-2629e5aba048ed5c6e012218b9e0a5b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/pilier_biome1.png"
-dest_files=["res://.godot/imported/pilier_biome1.png-ae15605ff76e1353c7aeec2166e88af4.ctex"]
+source_file="res://sprite/world_1/stalactite-sheet.png"
+dest_files=["res://.godot/imported/stalactite-sheet.png-2629e5aba048ed5c6e012218b9e0a5b6.ctex"]
 
 [params]
 

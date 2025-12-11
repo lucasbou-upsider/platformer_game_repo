@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jhjed5k3wior"
-path="res://.godot/imported/feuille.png-8129527b8a083fccef418aaae9117ee4.ctex"
+path="res://.godot/imported/feuille.png-a786fba228f34fec6d26de419885307e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/feuille.png"
-dest_files=["res://.godot/imported/feuille.png-8129527b8a083fccef418aaae9117ee4.ctex"]
+source_file="res://sprite/world_1/feuille.png"
+dest_files=["res://.godot/imported/feuille.png-a786fba228f34fec6d26de419885307e.ctex"]
 
 [params]
 

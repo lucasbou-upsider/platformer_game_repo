@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsa83elwm4cyc"
-path="res://.godot/imported/lumiere_godot.jpeg-10ca8759ab7638f652266fbbe0b43aa2.ctex"
+uid="uid://bepgiecok6n7o"
+path="res://.godot/imported/platforme_temple.png-dea887e62fa7d705862e19584a2a705b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/lumiere_godot.jpeg"
-dest_files=["res://.godot/imported/lumiere_godot.jpeg-10ca8759ab7638f652266fbbe0b43aa2.ctex"]
+source_file="res://sprite/world_1/platforme_temple.png"
+dest_files=["res://.godot/imported/platforme_temple.png-dea887e62fa7d705862e19584a2a705b.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bj4o2ek3xjc4s"]
 
 [ext_resource type="Script" uid="uid://dc6ontjcio8ed" path="res://script/mob/cuillere_mob.gd" id="1_34yja"]
-[ext_resource type="Texture2D" uid="uid://7crroqlwvn" path="res://sprite/niv_1/cuillere_mob.png" id="2_fovci"]
+[ext_resource type="Texture2D" uid="uid://7crroqlwvn" path="res://sprite/world_1/cuillere_mob.png" id="2_fovci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbd6c"]
 atlas = ExtResource("2_fovci")

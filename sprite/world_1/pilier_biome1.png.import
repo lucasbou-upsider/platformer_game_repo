@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gbxak3nwxebk"
-path="res://.godot/imported/platformetest.png-16d44a3aad551c0542bf3f69f149236f.ctex"
+uid="uid://f6gxnl1mejk6"
+path="res://.godot/imported/pilier_biome1.png-4af3f1503a778c8c3bc097d409ec12d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/platformetest.png"
-dest_files=["res://.godot/imported/platformetest.png-16d44a3aad551c0542bf3f69f149236f.ctex"]
+source_file="res://sprite/world_1/pilier_biome1.png"
+dest_files=["res://.godot/imported/pilier_biome1.png-4af3f1503a778c8c3bc097d409ec12d3.ctex"]
 
 [params]
 

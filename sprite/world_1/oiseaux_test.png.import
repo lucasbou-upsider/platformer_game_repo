@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtanokngv1nxa"
-path="res://.godot/imported/New Piskel (2).png-f5ceafdf85d69f3e460e61377a7431e8.ctex"
+uid="uid://2a2reuudb33p"
+path="res://.godot/imported/oiseaux_test.png-58276d1e445df2deeb1f49bbb4de290c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/New Piskel (2).png"
-dest_files=["res://.godot/imported/New Piskel (2).png-f5ceafdf85d69f3e460e61377a7431e8.ctex"]
+source_file="res://sprite/world_1/oiseaux_test.png"
+dest_files=["res://.godot/imported/oiseaux_test.png-58276d1e445df2deeb1f49bbb4de290c.ctex"]
 
 [params]
 

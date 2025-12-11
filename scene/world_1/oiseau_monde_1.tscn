@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://b2gmv62n0rpg6"]
 
 [ext_resource type="Script" uid="uid://bqhb2caqwpa12" path="res://script/world_1/oiseau_monde_1.gd" id="1_2ut3b"]
-[ext_resource type="Texture2D" uid="uid://2a2reuudb33p" path="res://sprite/niv_1/oiseaux_test.png" id="2_hc77r"]
+[ext_resource type="Texture2D" uid="uid://2a2reuudb33p" path="res://sprite/world_1/oiseaux_test.png" id="2_hc77r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx2j0"]
 atlas = ExtResource("2_hc77r")
@@ -220,6 +220,7 @@ scale = Vector2(6, 6)
 script = ExtResource("1_2ut3b")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_wchp3")
 animation = &"idle"
 
@@ -231,11 +232,11 @@ shape = SubResource("CircleShape2D_uy3sl")
 [node name="area_oiseau" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_oiseau"]
-position = Vector2(-11, 13.166667)
+position = Vector2(-7.5, 8.833334)
 shape = SubResource("CircleShape2D_2ut3b")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(-10.833334, 12.666667)
+position = Vector2(-7.5000005, 8.833334)
 emitting = false
 amount = 11
 lifetime = 0.95

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hfw8y2cwy3t5"
-path="res://.godot/imported/titik.png-f3947ca1bbd7d960103179eafdf97e26.ctex"
+uid="uid://bxp5dnnjr0346"
+path="res://.godot/imported/arbre_test.png-0c81c96288635f9dd78767fed7ba3bf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/titik.png"
-dest_files=["res://.godot/imported/titik.png-f3947ca1bbd7d960103179eafdf97e26.ctex"]
+source_file="res://sprite/world_1/arbre_test.png"
+dest_files=["res://.godot/imported/arbre_test.png-0c81c96288635f9dd78767fed7ba3bf1.ctex"]
 
 [params]
 

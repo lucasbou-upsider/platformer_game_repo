@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buwkfikh0755v"
-path="res://.godot/imported/arbre_doré.png-0905159d9d6874e2739491bfc90604a2.ctex"
+uid="uid://hfw8y2cwy3t5"
+path="res://.godot/imported/titik.png-b1e72e1663e6e9f5a08fcf7620f24670.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/arbre_doré.png"
-dest_files=["res://.godot/imported/arbre_doré.png-0905159d9d6874e2739491bfc90604a2.ctex"]
+source_file="res://sprite/world_1/titik.png"
+dest_files=["res://.godot/imported/titik.png-b1e72e1663e6e9f5a08fcf7620f24670.ctex"]
 
 [params]
 

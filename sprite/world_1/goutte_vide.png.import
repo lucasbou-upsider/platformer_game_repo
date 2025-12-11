@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bepgiecok6n7o"
-path="res://.godot/imported/platforme_temple.png-0c99f55e0dbebf3b9bdeb50563889cb0.ctex"
+uid="uid://bcarwujokjleu"
+path="res://.godot/imported/goutte_vide.png-b13de3e8519de15849eb4f702170d880.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niv_1/platforme_temple.png"
-dest_files=["res://.godot/imported/platforme_temple.png-0c99f55e0dbebf3b9bdeb50563889cb0.ctex"]
+source_file="res://sprite/world_1/goutte_vide.png"
+dest_files=["res://.godot/imported/goutte_vide.png-b13de3e8519de15849eb4f702170d880.ctex"]
 
 [params]
 
