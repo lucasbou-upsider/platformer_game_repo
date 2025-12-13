@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if ray_cast_2d.is_colliding():
 		freeze = true
 		animated_sprite_2d.play("splash")

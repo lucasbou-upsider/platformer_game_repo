@@ -201,11 +201,11 @@ func degats():
 		GameManager.player_in_regen = false
 		GameManager.zoom_camera = Vector2(0.7, 0.7)
 	hit = true
-	position.y -= 20
-	if velocity.x > 0:
-		position.x -= 20
-	elif velocity.x < 0:
-		position.x += 20
+	#position.y -= 20
+	#if velocity.x > 0:
+		#position.x -= 20
+	#elif velocity.x < 0:
+		#position.x += 20
 	
 	collision_area.set_deferred("disabled", true) 
 	pv -=1

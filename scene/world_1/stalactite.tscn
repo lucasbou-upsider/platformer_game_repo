@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjh58kwyu62js"]
+[gd_scene load_steps=15 format=3 uid="uid://bjh58kwyu62js"]
 
 [ext_resource type="Texture2D" uid="uid://khba3eurdjiy" path="res://sprite/world_1/stalactite-sheet.png" id="1_3qsp5"]
 [ext_resource type="Script" uid="uid://ti1fcbsrr0xh" path="res://script/world_1/stalactite.gd" id="1_62iaa"]
@@ -93,9 +93,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3qsp5"]
-radius = 44.181442
-
 [node name="stalactite" type="Node2D"]
 script = ExtResource("1_62iaa")
 
@@ -108,9 +105,8 @@ frame_progress = 0.13016576
 
 [node name="degats" type="Area2D" parent="." groups=["ennemie"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="degats"]
-position = Vector2(3, -8)
-shape = SubResource("CircleShape2D_3qsp5")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="degats"]
+polygon = PackedVector2Array(-26, -40, 1, 31, 30, -40)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

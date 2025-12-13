@@ -9,6 +9,7 @@ var attaque = false
 @onready var area_collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 
 
+
 func _ready() -> void:
 	animated_sprite.play("default")
 	freeze = true
@@ -30,16 +31,11 @@ func _process(_delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if attaque == true:
-		if area.is_in_group("player"):
+		if area.is_in_group("player") or area.is_in_group("ennemie"):
 			area.get_parent().degats()
 			set_deferred("freeze", true)
 			animated_sprite.play("explosion")
-			await get_tree().create_timer(0.4).timeout
-			queue_free()
-		if area.is_in_group("ennemie"):
-			area.get_parent().degats()
-			set_deferred("freeze", true)
-			animated_sprite.play("explosion")
+			area_collision_shape_2d.set_deferred("disabled", true)
 			await get_tree().create_timer(0.4).timeout
 			queue_free()
 

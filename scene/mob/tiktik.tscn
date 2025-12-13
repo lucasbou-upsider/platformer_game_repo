@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2d0ctlschf4w"]
+[gd_scene load_steps=19 format=3 uid="uid://b2d0ctlschf4w"]
 
 [ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/mob/tiktik.gd" id="1_gv45o"]
 [ext_resource type="Texture2D" uid="uid://hfw8y2cwy3t5" path="res://sprite/world_1/titik.png" id="1_mur5q"]
 [ext_resource type="Shader" uid="uid://dsat5ff8lsdkw" path="res://flash.gdshader" id="2_witf7"]
 [ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="3_6gwfl"]
+[ext_resource type="Shader" uid="uid://cqwaw6mxuvct1" path="res://cercle.gdshader" id="5_se5do"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_se5do"]
 resource_local_to_scene = true
@@ -97,6 +98,14 @@ _data = {
 &"flash": SubResource("Animation_se5do")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dveu"]
+shader = ExtResource("5_se5do")
+shader_parameter/color = Vector4(1, 1, 1, 0.53)
+shader_parameter/diameter = 1.0
+shader_parameter/thickness = 0.05
+shader_parameter/frequency = 10.0
+shader_parameter/phase = 0.0
+
 [node name="tiktik" type="CharacterBody2D"]
 scale = Vector2(4, 4)
 collision_layer = 2
@@ -154,3 +163,11 @@ shape = SubResource("CircleShape2D_6gwfl")
 libraries = {
 &"": SubResource("AnimationLibrary_lnsas")
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6dveu")
+offset_left = -30.5
+offset_top = -30.25
+offset_right = 9.5
+offset_bottom = 9.75
+scale = Vector2(1.5, 1.5)
