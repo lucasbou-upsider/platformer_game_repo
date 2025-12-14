@@ -7,6 +7,7 @@ var protecte = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
+@onready var color_rect: ColorRect = $ColorRect
 
 func _ready() -> void:
 	aleatoire_protect()
@@ -53,9 +54,11 @@ func aleatoire_protect():
 #quand le mob se protege
 func protect():
 	protecte = true
+	animated_sprite_2d.play("protect")
 	animation_player.play("flash")
 	await get_tree().create_timer(2).timeout
 	protecte = false
+	animated_sprite_2d.play("walk")
 	aleatoire_protect()
 
 #quand le tiktik prend des degats 
@@ -64,3 +67,13 @@ func degats():
 		queue_free()
 	else :
 		GameManager.framefreeze(0.1,0.5)
+
+
+func _on_zone_sombre_area_entered(area: Area2D) -> void:
+	if area.is_in_group("platforme_marker"):
+		color_rect.set_deferred("visible", true)
+
+
+func _on_zone_sombre_area_exited(area: Area2D) -> void:
+	if area.is_in_group("platforme_marker"):
+		color_rect.set_deferred("visible", false)

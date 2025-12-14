@@ -6,7 +6,8 @@ var is_in_area = false
 var in_invocate = false
 var vulnebilarity_moment = 3
 @onready var reload: Timer = $reload
-@onready var color_rect: ColorRect = $ColorRect
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 
 func _ready() -> void:
 	#gere les déplacement
@@ -14,6 +15,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	animation()
+	
 	#gravité
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -28,7 +32,9 @@ func _physics_process(delta: float) -> void:
 	
 func move():
 	velocity.x = 10
+	animated_sprite_2d.flip_h = false
 	await get_tree().create_timer(6).timeout
+	animated_sprite_2d.flip_h = true
 	velocity.x = -10
 	await get_tree().create_timer(6).timeout
 	move()
@@ -37,14 +43,12 @@ func move():
 func invocation_kayou():
 	if is_in_area == true and can_invocate == true:
 		in_invocate = true
-		color_rect.color = Color(0.0, 1.0, 1.0)
 		var kayou_instance = kayou.instantiate()
 		get_parent().add_child(kayou_instance)
 		can_invocate = false
 		reload.start()
 		await get_tree().create_timer(vulnebilarity_moment).timeout
 		in_invocate = false
-		color_rect.color = Color(1.0, 1.0, 1.0)
 #invocation detection area
 func _on_detecteur_invoc_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
@@ -64,3 +68,12 @@ func degats():
 		queue_free()
 	else :
 		GameManager.framefreeze(0.1,0.5)
+
+func animation():
+	if in_invocate == true:
+		animated_sprite_2d.play("attaque")
+	elif  velocity.x != 0:
+		animated_sprite_2d.play("walk")
+	elif  velocity.x == 0:
+		animated_sprite_2d.play("idle")
+	

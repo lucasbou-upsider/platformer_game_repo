@@ -112,8 +112,8 @@ mass = 0.2
 script = ExtResource("1_xb8em")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, -3.9999998)
-scale = Vector2(5, 5)
+position = Vector2(2, -3)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_rsrbr")
 animation = &"tombe"
 autoplay = "tombe"
@@ -124,7 +124,7 @@ autoplay = "tombe"
 shape = SubResource("CircleShape2D_t8lxc")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 14)
+target_position = Vector2(0, 17)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2

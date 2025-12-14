@@ -1,10 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2d0ctlschf4w"]
+[gd_scene load_steps=22 format=3 uid="uid://b2d0ctlschf4w"]
 
 [ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/mob/tiktik.gd" id="1_gv45o"]
-[ext_resource type="Texture2D" uid="uid://hfw8y2cwy3t5" path="res://sprite/world_1/titik.png" id="1_mur5q"]
 [ext_resource type="Shader" uid="uid://dsat5ff8lsdkw" path="res://flash.gdshader" id="2_witf7"]
+[ext_resource type="Texture2D" uid="uid://dc1w5g7y48ub2" path="res://sprite/world_1/tiktik.png" id="3_6dveu"]
 [ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="3_6gwfl"]
 [ext_resource type="Shader" uid="uid://cqwaw6mxuvct1" path="res://cercle.gdshader" id="5_se5do"]
+[ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/world_1/lumiere_godot.jpeg" id="6_6dveu"]
+
+[sub_resource type="Gradient" id="Gradient_6dveu"]
+offsets = PackedFloat32Array(0, 0.12804878, 1)
+colors = PackedColorArray(0.3766234, 0.3766234, 0.3766234, 0.3766234, 1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_se5do"]
 resource_local_to_scene = true
@@ -12,41 +17,48 @@ shader = ExtResource("2_witf7")
 shader_parameter/hit_flash_color = Color(1, 1, 1, 1)
 shader_parameter/hit_flash_on = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gv45o"]
-atlas = ExtResource("1_mur5q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnsas"]
+atlas = ExtResource("3_6dveu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiuq8"]
+atlas = ExtResource("3_6dveu")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6gwfl"]
-atlas = ExtResource("1_mur5q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_050ok"]
+atlas = ExtResource("3_6dveu")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_syped"]
-atlas = ExtResource("1_mur5q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_elrxs"]
+atlas = ExtResource("3_6dveu")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_77e52"]
-atlas = ExtResource("1_mur5q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr6m1"]
+atlas = ExtResource("3_6dveu")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itpsw"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnsas")
+}],
 "loop": true,
 "name": &"protect",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gv45o")
+"texture": SubResource("AtlasTexture_yiuq8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6gwfl")
+"texture": SubResource("AtlasTexture_050ok")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_syped")
+"texture": SubResource("AtlasTexture_elrxs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_77e52")
+"texture": SubResource("AtlasTexture_pr6m1")
 }],
 "loop": true,
 "name": &"walk",
@@ -100,8 +112,8 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dveu"]
 shader = ExtResource("5_se5do")
-shader_parameter/color = Vector4(1, 1, 1, 0.53)
-shader_parameter/diameter = 1.0
+shader_parameter/color = Vector4(1.01, -0.395, -0.29, 0.1)
+shader_parameter/diameter = 0.965
 shader_parameter/thickness = 0.05
 shader_parameter/frequency = 10.0
 shader_parameter/phase = 0.0
@@ -124,14 +136,14 @@ gravity = Vector2(0, 0)
 orbit_velocity_min = -0.2
 orbit_velocity_max = 0.2
 scale_amount_min = 0.5
-color = Color(0, 0, 0, 1)
+color = Color(0.8, 0.8, 0.77254903, 1)
+color_ramp = SubResource("Gradient_6dveu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_se5do")
 position = Vector2(0, -12.2)
 sprite_frames = SubResource("SpriteFrames_itpsw")
-animation = &"walk"
-frame_progress = 0.5775418
+animation = &"protect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.4)
@@ -165,9 +177,19 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_6dveu")
 offset_left = -30.5
 offset_top = -30.25
 offset_right = 9.5
 offset_bottom = 9.75
 scale = Vector2(1.5, 1.5)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -1.1920929e-07)
+scale = Vector2(1.6444443, 1.7244443)
+energy = 0.3
+texture = ExtResource("6_6dveu")
+
+[connection signal="area_entered" from="zone_sombre" to="." method="_on_zone_sombre_area_entered"]
+[connection signal="area_exited" from="zone_sombre" to="." method="_on_zone_sombre_area_exited"]

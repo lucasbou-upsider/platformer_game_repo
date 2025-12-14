@@ -26,3 +26,6 @@ func _on_timer_timeout() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	timer.start()
 	invoc_void()
+
+func degats():
+	pass
