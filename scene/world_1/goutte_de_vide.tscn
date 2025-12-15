@@ -124,7 +124,7 @@ autoplay = "tombe"
 shape = SubResource("CircleShape2D_t8lxc")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 17)
+target_position = Vector2(0, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2

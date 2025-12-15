@@ -7,7 +7,7 @@ var in_invocate = false
 var vulnebilarity_moment = 3
 @onready var reload: Timer = $reload
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var limite_zone_sombre: ColorRect = $limite_zone_sombre
 
 func _ready() -> void:
 	#gere les déplacement
@@ -77,3 +77,13 @@ func animation():
 	elif  velocity.x == 0:
 		animated_sprite_2d.play("idle")
 	
+
+
+func _on_zone_sombre_area_entered(area: Area2D) -> void:
+	if area.is_in_group("platforme_marker"):
+		limite_zone_sombre.set_deferred("visible", true)
+
+
+func _on_zone_sombre_area_exited(area: Area2D) -> void:
+	if area.is_in_group("platforme_marker"):
+		limite_zone_sombre.set_deferred("visible", false)

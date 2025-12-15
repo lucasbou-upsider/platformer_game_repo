@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvtu57h1swjru"]
+[gd_scene load_steps=22 format=3 uid="uid://dvtu57h1swjru"]
 
 [ext_resource type="Script" uid="uid://dujp3d45yrmeh" path="res://script/mob/invocateur_kayou.gd" id="1_4k2li"]
 [ext_resource type="Texture2D" uid="uid://dsbrsh683uq5t" path="res://sprite/world_1/vieux_cailloux.png" id="2_4al62"]
 [ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="2_h8t2c"]
+[ext_resource type="Shader" uid="uid://cqwaw6mxuvct1" path="res://cercle.gdshader" id="4_3y3ic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3y3ic"]
 atlas = ExtResource("2_4al62")
@@ -104,6 +105,18 @@ radius = 571.63666
 [sub_resource type="CircleShape2D" id="CircleShape2D_4al62"]
 radius = 91.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4d8rd"]
+shader = ExtResource("4_3y3ic")
+shader_parameter/color = Vector4(1.01, -0.395, -0.29, 0.1)
+shader_parameter/diameter = 0.965
+shader_parameter/thickness = 0.05
+shader_parameter/frequency = 10.0
+shader_parameter/phase = 0.0
+
+[sub_resource type="Gradient" id="Gradient_3y3ic"]
+offsets = PackedFloat32Array(0, 0.12804878, 1)
+colors = PackedColorArray(0.3766234, 0.3766234, 0.3766234, 0.3766234, 1, 1, 1, 1, 0, 0, 0, 0)
+
 [node name="invocateur_kayou" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
@@ -138,6 +151,34 @@ wait_time = 4.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zone_sombre"]
 shape = SubResource("CircleShape2D_4al62")
 
+[node name="limite_zone_sombre" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_4d8rd")
+offset_left = -92.0
+offset_top = -92.0
+offset_right = 31.333336
+offset_bottom = 30.666672
+scale = Vector2(1.5, 1.5)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(4.7683716e-07, -2.3841858e-07)
+scale = Vector2(1.4999999, 1.4999999)
+amount = 200
+lifetime = 3.0
+speed_scale = 0.3
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 60.38
+gravity = Vector2(0, 0)
+orbit_velocity_min = -0.2
+orbit_velocity_max = 0.2
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color = Color(0.8, 0.8, 0.77254903, 1)
+color_ramp = SubResource("Gradient_3y3ic")
+
 [connection signal="area_entered" from="detecteur_invoc" to="." method="_on_detecteur_invoc_area_entered"]
 [connection signal="area_exited" from="detecteur_invoc" to="." method="_on_detecteur_invoc_area_exited"]
 [connection signal="timeout" from="reload" to="." method="_on_reload_timeout"]
+[connection signal="area_entered" from="zone_sombre" to="." method="_on_zone_sombre_area_entered"]
+[connection signal="area_exited" from="zone_sombre" to="." method="_on_zone_sombre_area_exited"]
