@@ -98,7 +98,7 @@ scale = Vector2(1.2, 1.2)
 script = ExtResource("1_62iaa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_o2qtb")
 animation = &"goutte"
 frame = 6
