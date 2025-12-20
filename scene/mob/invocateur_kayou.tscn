@@ -97,13 +97,13 @@ animations = [{
 size = Vector2(42, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gbjf1"]
-radius = 32.003906
+radius = 43.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4k2li"]
 radius = 571.63666
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4al62"]
-radius = 91.0
+radius = 21.023796
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4d8rd"]
 shader = ExtResource("4_3y3ic")
@@ -130,12 +130,13 @@ animation = &"idle"
 frame_progress = 0.6937081
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 27.5)
+position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_gbjf1")
 
 [node name="Area2D" type="Area2D" parent="." groups=["ennemie"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7, -9)
 shape = SubResource("CircleShape2D_gbjf1")
 
 [node name="detecteur_invoc" type="Area2D" parent="."]
@@ -149,6 +150,7 @@ wait_time = 4.0
 [node name="zone_sombre" parent="." instance=ExtResource("2_h8t2c")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zone_sombre"]
+position = Vector2(30, -72)
 shape = SubResource("CircleShape2D_4al62")
 
 [node name="limite_zone_sombre" type="ColorRect" parent="."]
@@ -161,7 +163,7 @@ offset_bottom = 30.666672
 scale = Vector2(1.5, 1.5)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(4.7683716e-07, -2.3841858e-07)
+position = Vector2(7, -9)
 scale = Vector2(1.4999999, 1.4999999)
 amount = 200
 lifetime = 3.0

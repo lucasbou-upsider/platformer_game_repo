@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 class_name player
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #vie
 var pv = 3
@@ -50,6 +51,10 @@ var dash_key_pressed = 0 #savoir si la touche de dash à été préssé
 var is_dashing = false #savoir si le joueur dash
 var nbr_dash = 1 #savoir le nbr de dahs restant au joueur
 
+func _ready() -> void:
+	animated_sprite_2d.play("walk")
+
+
 func _physics_process(delta: float) -> void:
 
 	wall_logique()
@@ -90,8 +95,10 @@ func _physics_process(delta: float) -> void:
 	if is_wall_jumping == false and is_dashing == false and GameManager.player_in_regen == false:
 		var direction := Input.get_axis("gauche", "droite")
 		if direction:
+			animated_sprite_2d.play("walk")
 			velocity.x = move_toward(velocity.x , direction * speed, aceleration * speed)
 		else:
+			animated_sprite_2d.play("idle")
 			velocity.x = move_toward(velocity.x, 0, speed * deceleration)
 
 	#dash
@@ -125,7 +132,7 @@ func regen():
 func _on_regen_timer_timeout() -> void:
 	pv = 3
 	GameManager.player_in_regen = false
-	GameManager.zoom_camera = Vector2(0.7, 0.7)
+	GameManager.zoom_camera = Vector2(0.8, 0.8)
 
 #wall jump
 func wall_logique():

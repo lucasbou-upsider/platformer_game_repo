@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2d0ctlschf4w"]
+[gd_scene load_steps=23 format=3 uid="uid://b2d0ctlschf4w"]
 
 [ext_resource type="Script" uid="uid://1o3wmqusvqv0" path="res://script/mob/tiktik.gd" id="1_gv45o"]
 [ext_resource type="Shader" uid="uid://dsat5ff8lsdkw" path="res://flash.gdshader" id="2_witf7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxpo0i1cac3rs" path="res://scene/zone_sombre.tscn" id="3_6gwfl"]
 [ext_resource type="Shader" uid="uid://cqwaw6mxuvct1" path="res://cercle.gdshader" id="5_se5do"]
 [ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/world_1/lumiere_godot.jpeg" id="6_6dveu"]
+[ext_resource type="Script" uid="uid://d1a4ptacidtcq" path="res://script/state/state_machine.gd" id="7_lnsas"]
 
 [sub_resource type="Gradient" id="Gradient_6dveu"]
 offsets = PackedFloat32Array(0, 0.12804878, 1)
@@ -68,7 +69,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv45o"]
 size = Vector2(8, 4.800001)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gv45o"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lnsas"]
+radius = 3.7499375
+height = 15.502627
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gwfl"]
 radius = 28.20638
@@ -164,7 +167,8 @@ collision_mask = 4
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="degats"]
-shape = SubResource("CircleShape2D_gv45o")
+rotation = 1.565027
+shape = SubResource("CapsuleShape2D_lnsas")
 
 [node name="zone_sombre" parent="." instance=ExtResource("3_6gwfl")]
 
@@ -186,10 +190,12 @@ offset_bottom = 9.75
 scale = Vector2(1.5, 1.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, -1.1920929e-07)
 scale = Vector2(1.6444443, 1.7244443)
 energy = 0.3
 texture = ExtResource("6_6dveu")
+
+[node name="state machine" type="Node" parent="."]
+script = ExtResource("7_lnsas")
 
 [connection signal="area_entered" from="zone_sombre" to="." method="_on_zone_sombre_area_entered"]
 [connection signal="area_exited" from="zone_sombre" to="." method="_on_zone_sombre_area_exited"]

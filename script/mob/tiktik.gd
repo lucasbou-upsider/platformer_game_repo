@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name tiktik
 var facing_right 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 var SPEED = -50
@@ -8,6 +8,7 @@ var protecte = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
 @onready var color_rect: ColorRect = $ColorRect
+
 
 func _ready() -> void:
 	aleatoire_protect()
