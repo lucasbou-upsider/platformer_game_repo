@@ -643,7 +643,7 @@ offset_left = -3301.0
 offset_top = -1700.0
 offset_right = 16485.0
 offset_bottom = 7533.0
-color = Color(0.18039216, 0.18039216, 0.36078432, 1)
+color = Color(0.14771172, 0.14759585, 0.303838, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -681,6 +681,7 @@ region_rect = Rect2(0, 71.856476, 160, 728.14355)
 scroll_scale = Vector2(0.4, 0.4)
 
 [node name="IleFond" type="Sprite2D" parent="montagne_pilier/Parallax2D2"]
+modulate = Color(1, 1, 1, 0.72400004)
 texture_filter = 2
 position = Vector2(1499, 698)
 scale = Vector2(4, 4)
