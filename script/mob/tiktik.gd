@@ -68,6 +68,7 @@ func degats():
 		queue_free()
 	else :
 		GameManager.framefreeze(0.1,0.5)
+		animation_player.play("skretch")
 
 
 func _on_zone_sombre_area_entered(area: Area2D) -> void:

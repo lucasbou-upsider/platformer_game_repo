@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsa83elwm4cyc"
-path="res://.godot/imported/lumiere_godot.jpeg-8e7fd7f2bfc98a92d84ffedb20bd4e1a.ctex"
+path="res://.godot/imported/lumiere_godot.jpeg-e661ffcdc4c647781d8444d6010759a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/world_1/lumiere_godot.jpeg"
-dest_files=["res://.godot/imported/lumiere_godot.jpeg-8e7fd7f2bfc98a92d84ffedb20bd4e1a.ctex"]
+source_file="res://sprite/lumiere_godot.jpeg"
+dest_files=["res://.godot/imported/lumiere_godot.jpeg-e661ffcdc4c647781d8444d6010759a5.ctex"]
 
 [params]
 

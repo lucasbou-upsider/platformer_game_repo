@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csdkevedo4iat" path="res://sprite/player/player.png" id="2_ajqqa"]
 [ext_resource type="Texture2D" uid="uid://bx1qndd3qv6xk" path="res://sprite/player/lifetest.png" id="2_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://i5o04onixrx" path="res://sprite/player/symbol platforme.png" id="2_fvtld"]
-[ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/world_1/lumiere_godot.jpeg" id="2_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://bsa83elwm4cyc" path="res://sprite/lumiere_godot.jpeg" id="2_hjaqi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajqqa"]
 atlas = ExtResource("2_ajqqa")
@@ -107,7 +107,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
@@ -562,6 +562,7 @@ position = Vector2(-74, -33)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oypl4")
 animation = &"walk"
+frame_progress = 0.6238458
 
 [node name="regen_timer" type="Timer" parent="."]
 wait_time = 2.0

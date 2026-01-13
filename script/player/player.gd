@@ -24,22 +24,22 @@ var hit = false
 @onready var particule_course: CPUParticles2D = $particule_course #particule quand le joueur court
 
 #saut
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -550.0
 @onready var jump_timer: Timer = $jump_timer2/jump_timer #savoir si le joueur peux sauter pour le coyote time
 var can_jump = false #savoir si le joueur peux sauter
 var coyote_time = 0.3 
 @export_range(0, 1) var deceleration = 0.1 # decelration du joueur quand il bouge 
 @export_range(0, 1) var aceleration = 0.1 # aceleration du joueur quand il bouge 
 const gravity = 1100 #gravité du joueur
-const fall_gravity = 1600 #gravité du joueur augmenté quand il tombe
+const fall_gravity = 1650 #gravité du joueur augmenté quand il tombe
 
 #wall jump
 @export_category("wall jump variable") 
 @export var wall_slide = 150 #force à laquelle le joueur glisse sur le mur 
 @onready var right_ray: RayCast2D = $raycast/right_ray #raycast pour detecter si le joueur est contre le mur
 @onready var right_ray_2: RayCast2D = $raycast/right_ray2 #raycast pour detecter si le joueur est contre le mur
-@export var wall_x_force = 200 #velocité du joueur quand il est sur le mur
-@export var wall_y_force = -750 #velocité du joueur quand il est sur le mur
+@export var wall_x_force = 200 #velocité du joueur quand il saute alors qu'il est sur un mur 
+@export var wall_y_force = -700 #velocité du joueur quand il saute alors qu'il est sur un mur 
 var is_wall_jumping = false #savoir si le joueur saute d'un mur
 
 #dash
