@@ -8,15 +8,15 @@ var pv = 3
 var invulnerability_time = 3
 var hit = false
 @onready var area: Area2D = $area #area de la detection de la collision entre le joueur et les ennemies
-@onready var ui_life_animation: AnimationPlayer = $CanvasLayer/BoxContainer2/ui_life_animation #montre la vie du joueur
+@onready var ui_life_animation: AnimationPlayer = $CanvasLayer/life_container/ui_life_animation #montre la vie du joueur
 @onready var collision_area: CollisionShape2D = $area/Collision_area #collision de l'area entre le joueur et les ennemie
 
 #regen
 @onready var regen_timer: Timer = $regen_timer #temps de la régenération du joueur
 
 #platforme
-@onready var ui_platforme_animation: AnimationPlayer = $CanvasLayer/BoxContainer/ui_platforme_animation #ui qui montre le nombre de platforme restant au joueur
-@onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar #barre de rechargement de platforme
+@onready var ui_platforme_animation: AnimationPlayer = $CanvasLayer/platforme_container/ui_platforme_animation #ui qui montre le nombre de platforme restant au joueur
+@onready var progress_bar: ProgressBar = $CanvasLayer/platforme_loading_bar #barre de rechargement de platforme
 @onready var progresse_bar_timer: Timer = $"CanvasLayer/progresse bar timer"# le temps que prends les platfromes à se recharger
 
 #vitesse
@@ -26,6 +26,7 @@ var hit = false
 #saut
 const JUMP_VELOCITY = -550.0
 @onready var jump_timer: Timer = $jump_timer2/jump_timer #savoir si le joueur peux sauter pour le coyote time
+@onready var jump_buffering_timer: Timer = $jump_timer2/jump_buffering_timer #si le joueur clique trop tot sur saut
 var can_jump = false #savoir si le joueur peux sauter
 var coyote_time = 0.3 
 @export_range(0, 1) var deceleration = 0.1 # decelration du joueur quand il bouge 
@@ -52,7 +53,7 @@ var is_dashing = false #savoir si le joueur dash
 var nbr_dash = 1 #savoir le nbr de dahs restant au joueur
 
 func _ready() -> void:
-	animated_sprite_2d.play("walk")
+	pass
 
 
 func _physics_process(delta: float) -> void:
@@ -63,6 +64,18 @@ func _physics_process(delta: float) -> void:
 	platforme_reload()
 	flip()
 	life()
+	
+	#animation 
+	if is_on_floor() == false:
+		if velocity.y > 0:
+			animated_sprite_2d.play("fall")
+		elif velocity.y < 0:
+			animated_sprite_2d.play("jump")
+	else:
+		if velocity == Vector2(0, 0):
+			animated_sprite_2d.play("idle")
+		else :
+			animated_sprite_2d.play("walk")
 	
 	
 	# gravité
@@ -83,6 +96,12 @@ func _physics_process(delta: float) -> void:
 		can_jump = true
 	elif can_jump == true and jump_timer.is_stopped():
 		jump_timer.start(coyote_time)
+		
+	#jump buffering 
+	if Input.is_action_just_pressed("saut") and can_jump == false and is_dashing == false:
+		jump_buffering_timer.start()
+	if is_on_floor() and jump_buffering_timer.time_left != 0:
+		velocity.y = JUMP_VELOCITY 
 
 	#saut dosable
 	if Input.is_action_just_released("saut") and velocity.y < 0:
@@ -95,14 +114,12 @@ func _physics_process(delta: float) -> void:
 	if is_wall_jumping == false and is_dashing == false and GameManager.player_in_regen == false:
 		var direction := Input.get_axis("gauche", "droite")
 		if direction:
-			animated_sprite_2d.play("walk")
 			velocity.x = move_toward(velocity.x , direction * speed, aceleration * speed)
 		else:
-			animated_sprite_2d.play("idle")
 			velocity.x = move_toward(velocity.x, 0, speed * deceleration)
 
 	#dash
-	if Input.is_action_just_pressed("courire") and dash_key_pressed ==0 and nbr_dash == 1:
+	if Input.is_action_just_pressed("courire") and dash_key_pressed == 0 and nbr_dash == 1:
 		dash_key_pressed = 1
 		nbr_dash -= 1
 		dash()
@@ -132,7 +149,7 @@ func regen():
 func _on_regen_timer_timeout() -> void:
 	pv = 3
 	GameManager.player_in_regen = false
-	GameManager.zoom_camera = Vector2(0.8, 0.8)
+	GameManager.zoom_camera = Vector2(0.75, 0.75)
 
 #wall jump
 func wall_logique():

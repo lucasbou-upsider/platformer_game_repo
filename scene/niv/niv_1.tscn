@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dmneaqsn58oow" path="res://script/mort/death_zone.gd" id="8_ocj38"]
 [ext_resource type="Script" uid="uid://b60d6vqipn4ys" path="res://script/niv/niv_1.gd" id="9_fmbtf"]
 [ext_resource type="PackedScene" uid="uid://byl8y7edxwee2" path="res://scene/player/player.tscn" id="10_umd54"]
-[ext_resource type="Script" uid="uid://rgqxcehtte0j" path="res://scene/player/camera_player.gd" id="11_v6n8i"]
+[ext_resource type="Script" uid="uid://rgqxcehtte0j" path="res://script/player/camera_player.gd" id="11_v6n8i"]
 [ext_resource type="PackedScene" uid="uid://dc15682v7x3de" path="res://scene/world_1/first_upsider.tscn" id="12_axjca"]
 [ext_resource type="PackedScene" uid="uid://b2d0ctlschf4w" path="res://scene/mob/tiktik.tscn" id="14_w7h7s"]
 [ext_resource type="PackedScene" uid="uid://dvtu57h1swjru" path="res://scene/mob/invocateur_kayou.tscn" id="15_rwxrh"]
@@ -722,7 +722,16 @@ tile_set = SubResource("TileSet_s57ix")
 
 [node name="arbre" type="Parallax2D" parent="montagne_pilier"]
 scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(1017, 1400)
+scroll_offset = Vector2(1032, 1382)
+
+[node name="ArbreDoré2" type="Sprite2D" parent="montagne_pilier/arbre"]
+texture_filter = 2
+position = Vector2(105, -1982)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+texture = ExtResource("4_cfudw")
+region_enabled = true
+region_rect = Rect2(0, 71.856476, 160, 728.14355)
 
 [node name="ArbreDoré" type="Sprite2D" parent="montagne_pilier/arbre"]
 texture_filter = 2
@@ -965,10 +974,9 @@ position = Vector2(-2920, 1027)
 rotation = -1.563286
 scale = Vector2(0.9999998, 0.9999998)
 amount = 300
-lifetime = 20.0
+lifetime = 15.0
 preprocess = 15.0
 speed_scale = 0.2
-lifetime_randomness = 1.0
 emission_shape = 3
 emission_rect_extents = Vector2(2000, 1)
 gravity = Vector2(100, 0)
@@ -987,10 +995,9 @@ position = Vector2(-2920, 1027)
 rotation = -1.563286
 scale = Vector2(0.9999998, 0.9999998)
 amount = 300
-lifetime = 20.0
+lifetime = 15.0
 preprocess = 15.0
 speed_scale = 0.2
-lifetime_randomness = 1.0
 emission_shape = 3
 emission_rect_extents = Vector2(2000, 1)
 gravity = Vector2(100, 0)

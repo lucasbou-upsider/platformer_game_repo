@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://script/game_manager/game_manager.gd"
+CollectibleManager="*res://script/game_manager/collectible_manager.gd"
 
 [file_customization]
 
@@ -32,6 +33,7 @@ player=""
 ennemie=""
 platforme=""
 platforme_marker=""
+Detectionattaque="l'area autour du joueur permettant de savoir les platformes pouvant attaquer"
 
 [input]
 

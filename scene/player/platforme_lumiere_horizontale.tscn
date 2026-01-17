@@ -237,13 +237,19 @@ script = ExtResource("1_ordyb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["platforme"]]
 shape = SubResource("RectangleShape2D_8cnum")
 
-[node name="Area2D" type="Area2D" parent="." groups=["platforme"]]
+[node name="detectionattaquearea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="detectionattaquearea"]
+shape = SubResource("RectangleShape2D_8cnum")
+
+[node name="attaquearea" type="Area2D" parent="." groups=["platforme"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attaquearea"]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_pg2b5")
 
 [node name="animated_sprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.54509807)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kps8w")
 animation = &"fondu"
@@ -267,5 +273,7 @@ scale = Vector2(0.5777778, 0.29333332)
 energy = 0.3
 texture = ExtResource("3_bn4uj")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="detectionattaquearea" to="." method="_on_detectionattaquearea_area_entered"]
+[connection signal="area_entered" from="attaquearea" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="attaquearea" to="." method="_on_attaquearea_area_exited"]
 [connection signal="timeout" from="remove_platforme" to="." method="_on_remove_platforme_timeout"]

@@ -4,7 +4,7 @@ var isntance_platforme_lumiere_verticale = preload("res://scene/player/platforme
 var isntance_platforme_lumiere_horizontale = preload("res://scene/player/platforme_lumiere_horizontale.tscn")
 @export var temps_platforme_respawn = 3
 var timer_start = false
-@onready var progress_bar: ProgressBar = $player/CanvasLayer/ProgressBar
+@onready var progress_bar: ProgressBar = $player/CanvasLayer/platforme_loading_bar
 @onready var platforme_timer: Timer = $platforme_timer
 @onready var platforme_marker: Sprite2D = $platforme_marker
 
@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	#placage de platforme
-	if GameManager.first_upsider == true and timer_start == false:
+	if CollectibleManager.unlock_platforme == true and timer_start == false:
 		if Input.is_action_just_pressed("platforme"):
 			if GameManager.nbr_platforme != 0:
 				if GameManager.orientation_platforme == "horizontale":

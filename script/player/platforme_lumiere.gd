@@ -2,11 +2,12 @@ extends RigidBody2D
 
 var is_desintegration = false
 var attaque = false
+var possible_attaque = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var remove_platforme: Timer = $remove_platforme
 @onready var point_light_2d_2: PointLight2D = $PointLight2D2
 @onready var animated_sprite: AnimatedSprite2D = $animated_sprite
-@onready var area_collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var attaquearea: Area2D = $attaquearea
 
 
 
@@ -17,16 +18,19 @@ func _ready() -> void:
 	remove_platforme.start()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("attaque"):
-		if attaque == false and is_desintegration == false:
-			point_light_2d_2.visible = true
-	if Input.is_action_just_released("attaque"):
-		if is_desintegration == false:
-			animated_sprite.play("attaque")
-			point_light_2d_2.visible = false
-			attaque = true
-			activation_attaque()
-
+	if possible_attaque == true:
+		animated_sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		if Input.is_action_just_pressed("attaque"):
+			if attaque == false and is_desintegration == false:
+				point_light_2d_2.visible = true
+		if Input.is_action_just_released("attaque"):
+			if is_desintegration == false:
+				animated_sprite.play("attaque")
+				point_light_2d_2.visible = false
+				attaque = true
+				activation_attaque()
+	elif attaque == false: 
+		animated_sprite.modulate = Color(1.0, 1.0, 1.0, 0.545)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -35,7 +39,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			area.get_parent().degats()
 			set_deferred("freeze", true)
 			animated_sprite.play("explosion")
-			area_collision_shape_2d.set_deferred("disabled", true)
+			attaquearea.set_deferred("disabled", true)
 			await get_tree().create_timer(0.4).timeout
 			queue_free()
 
@@ -46,7 +50,7 @@ func _on_remove_platforme_timeout() -> void:
 func desintegration():
 	if attaque == false:
 		is_desintegration = true
-		area_collision_shape_2d.set_deferred("disabled", true)
+		attaquearea.set_deferred("disabled", true)
 		animated_sprite.play("fondu")
 		await get_tree().create_timer(2).timeout
 		is_desintegration = false
@@ -59,3 +63,13 @@ func activation_attaque():
 	remove_platforme.start()
 	collision_shape_2d.disabled = true
 	freeze = false
+
+
+func _on_detectionattaquearea_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Detectionattaque"):
+		possible_attaque = true
+
+
+func _on_attaquearea_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Detectionattaque"):
+		possible_attaque = false

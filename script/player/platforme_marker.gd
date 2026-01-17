@@ -4,7 +4,7 @@ func _process(_delta: float) -> void:
 
 	#platforme marker 
 	position = get_global_mouse_position()
-	if GameManager.first_upsider == true and GameManager.nbr_platforme != 0:
+	if CollectibleManager.unlock_platforme == true and GameManager.nbr_platforme != 0:
 		visible = true
 		if GameManager.orientation_platforme == "horizontale":
 			rotation = 0.0

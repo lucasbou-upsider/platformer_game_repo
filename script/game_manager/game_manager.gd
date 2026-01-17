@@ -4,15 +4,15 @@ var nbr_platforme = 0
 var orientation_platforme = "horizontale"
 
 #camera
-var zoom_camera: Vector2 = Vector2(0.8, 0.8)
+var zoom_camera: Vector2 = Vector2(0.75, 0.75)
 var CameraFocusOnPlayer = true
 var position_camera: Vector2
 
 #quand le joueur est en train de se regen
 var player_in_regen = false
 
-#debloquage du premiere upside
-var first_upsider = false
+#savoir quand le joueur peux burst
+var player_burst = 0
 
 #resaparition au poit de spawn
 var respawn_point: Vector2 = Vector2(0 , 0 )
