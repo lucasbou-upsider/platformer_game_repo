@@ -64,18 +64,7 @@ func _physics_process(delta: float) -> void:
 	platforme_reload()
 	flip()
 	life()
-	
-	#animation 
-	if is_on_floor() == false:
-		if velocity.y > 0:
-			animated_sprite_2d.play("fall")
-		elif velocity.y < 0:
-			animated_sprite_2d.play("jump")
-	else:
-		if velocity == Vector2(0, 0):
-			animated_sprite_2d.play("idle")
-		else :
-			animated_sprite_2d.play("walk")
+	animation()
 	
 	
 	# gravité
@@ -153,12 +142,13 @@ func _on_regen_timer_timeout() -> void:
 
 #wall jump
 func wall_logique():
-	if is_on_wall():
-		velocity.y = wall_slide
-		if Input.is_action_just_pressed("saut"):
-			if right_ray.is_colliding() or right_ray_2.is_colliding():
-				velocity = Vector2(-wall_x_force, wall_y_force)
-				wall_jumping()
+	if is_on_wall() :
+		if Input.is_action_pressed("droite") or Input.is_action_pressed("gauche"):
+			velocity.y = wall_slide
+			if Input.is_action_just_pressed("saut"):
+				if right_ray.is_colliding() or right_ray_2.is_colliding():
+					velocity = Vector2(-wall_x_force, wall_y_force)
+					wall_jumping()
 func wall_jumping():
 	is_wall_jumping = true
 	await get_tree().create_timer(0.12).timeout
@@ -223,7 +213,7 @@ func degats():
 	if GameManager.player_in_regen == true:
 		regen_timer.stop()
 		GameManager.player_in_regen = false
-		GameManager.zoom_camera = Vector2(0.7, 0.7)
+		GameManager.zoom_camera = Vector2(0.75, 0.75)
 	hit = true
 	#position.y -= 20
 	#if velocity.x > 0:
@@ -238,6 +228,33 @@ func degats():
 	hit = false
 	await get_tree().create_timer(invulnerability_time).timeout #temps de l'invulnerabilité du joueur
 	collision_area.set_deferred("disabled", false) 
+
+
+
+var fall = false
+func animation():
+	#animation 
+	if is_on_floor() == false:
+		if velocity.y > 0:
+			if fall == false:
+				animated_sprite_2d.play("transition_jump_fall")
+		elif velocity.y < 0:
+			animated_sprite_2d.play("jump")
+	else:
+		fall = false
+		if velocity == Vector2(0, 0):
+			if GameManager.player_in_regen == true:
+				animated_sprite_2d.play("heal")
+			else:
+				animated_sprite_2d.play("idle")
+		else :
+			animated_sprite_2d.play("walk")
+func _on_animated_sprite_2d_animation_finished() -> void:
+	var getanimation = animated_sprite_2d.get_animation()
+	if getanimation == "transition_jump_fall":
+		fall = true
+		animated_sprite_2d.play("fall")
+
 
 #comptage du nbr de platforme ui
 func ui_platforme():

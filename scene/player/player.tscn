@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://byl8y7edxwee2"]
+[gd_scene format=3 uid="uid://byl8y7edxwee2"]
 
 [ext_resource type="Script" uid="uid://rlls30862rht" path="res://script/player/player.gd" id="1_xo3ru"]
 [ext_resource type="Texture2D" uid="uid://csdkevedo4iat" path="res://sprite/player/player.png" id="2_ajqqa"]
@@ -157,6 +157,34 @@ region = Rect2(2698, 0, 71, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrjwp"]
 atlas = ExtResource("2_ajqqa")
 region = Rect2(2627, 0, 71, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qehiv"]
+atlas = ExtResource("2_ajqqa")
+region = Rect2(3266, 0, 71, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rx5w"]
+atlas = ExtResource("2_ajqqa")
+region = Rect2(3337, 0, 71, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4afv"]
+atlas = ExtResource("2_ajqqa")
+region = Rect2(3408, 0, 71, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxxrj"]
+atlas = ExtResource("2_ajqqa")
+region = Rect2(3479, 0, 71, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fvns"]
+atlas = ExtResource("2_ajqqa")
+region = Rect2(3550, 0, 71, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kosee"]
+atlas = ExtResource("2_ajqqa")
+region = Rect2(3621, 0, 71, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tukw2"]
+atlas = ExtResource("2_ajqqa")
+region = Rect2(3692, 0, 71, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0oa35"]
 atlas = ExtResource("2_ajqqa")
@@ -328,6 +356,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qehiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rx5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4afv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxxrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fvns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kosee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tukw2")
+}],
+"loop": false,
+"name": &"transition_jump_fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0oa35")
 }, {
 "duration": 1.0,
@@ -358,11 +412,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
 radius = 20.0
-height = 62.0
+height = 92.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xo3ru"]
 radius = 23.0
-height = 72.0
+height = 102.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ajqqa"]
 radius = 540.01483
@@ -784,111 +838,110 @@ _data = {
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xo3ru"]
 polygon = PackedVector2Array(20, -31, 20, 31, -20, 31, -20, -31)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=1466770556]
 safe_margin = 0.14
 script = ExtResource("1_xo3ru")
 
-[node name="raycast" type="Node2D" parent="."]
+[node name="raycast" type="Node2D" parent="." unique_id=1436931984]
 
-[node name="right_ray" type="RayCast2D" parent="raycast"]
+[node name="right_ray" type="RayCast2D" parent="raycast" unique_id=625069375]
 position = Vector2(-0.99999994, -14.999999)
 scale = Vector2(5, 5)
 target_position = Vector2(10.4, 0)
 
-[node name="right_ray2" type="RayCast2D" parent="raycast"]
+[node name="right_ray2" type="RayCast2D" parent="raycast" unique_id=168181536]
 position = Vector2(-1, 13.999999)
 scale = Vector2(5, 5)
 target_position = Vector2(10.4, 0)
 
-[node name="jump_timer2" type="Node2D" parent="."]
+[node name="jump_timer2" type="Node2D" parent="." unique_id=1090158651]
 
-[node name="jump_timer" type="Timer" parent="jump_timer2"]
+[node name="jump_timer" type="Timer" parent="jump_timer2" unique_id=54678376]
 wait_time = 0.3
 one_shot = true
 
-[node name="jump_buffering_timer" type="Timer" parent="jump_timer2"]
-wait_time = 0.2
+[node name="jump_buffering_timer" type="Timer" parent="jump_timer2" unique_id=913705651]
+wait_time = 0.1
 one_shot = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2131464298]
 position = Vector2(-74, -33)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oypl4")
-animation = &"fall"
+animation = &"idle"
+frame_progress = 0.35869673
 
-[node name="regen_timer" type="Timer" parent="."]
-wait_time = 2.0
+[node name="regen_timer" type="Timer" parent="." unique_id=1851543043]
+wait_time = 2.5
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1479167349]
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_hjaqi")
 
-[node name="area" type="Area2D" parent="." groups=["player"]]
+[node name="area" type="Area2D" parent="." unique_id=2121033702 groups=["player"]]
 position = Vector2(-20, -31)
 
-[node name="Collision_area" type="CollisionShape2D" parent="area"]
-position = Vector2(20, 31)
+[node name="Collision_area" type="CollisionShape2D" parent="area" unique_id=1497014499]
+position = Vector2(20, 14)
 shape = SubResource("CapsuleShape2D_xo3ru")
 
-[node name="attaque_area" type="Area2D" parent="." groups=["Detectionattaque"]]
+[node name="attaque_area" type="Area2D" parent="." unique_id=1443192377 groups=["Detectionattaque"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attaque_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attaque_area" unique_id=1721362336]
 shape = SubResource("CircleShape2D_ajqqa")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1503630831]
 
-[node name="life_container" type="BoxContainer" parent="CanvasLayer"]
+[node name="life_container" type="BoxContainer" parent="CanvasLayer" unique_id=1780342259]
 offset_bottom = 40.0
 
-[node name="Lifetest" type="Sprite2D" parent="CanvasLayer/life_container"]
+[node name="Lifetest" type="Sprite2D" parent="CanvasLayer/life_container" unique_id=1905823241]
 position = Vector2(22, 21)
 scale = Vector2(3, 3)
 texture = ExtResource("2_ct4mp")
 
-[node name="Lifetest2" type="Sprite2D" parent="CanvasLayer/life_container"]
+[node name="Lifetest2" type="Sprite2D" parent="CanvasLayer/life_container" unique_id=1766278155]
 position = Vector2(55, 21)
 scale = Vector2(3, 3)
 texture = ExtResource("2_ct4mp")
 
-[node name="Lifetest3" type="Sprite2D" parent="CanvasLayer/life_container"]
+[node name="Lifetest3" type="Sprite2D" parent="CanvasLayer/life_container" unique_id=366624457]
 position = Vector2(90, 21)
 scale = Vector2(3, 3)
 texture = ExtResource("2_ct4mp")
 
-[node name="ui_life_animation" type="AnimationPlayer" parent="CanvasLayer/life_container"]
-libraries = {
-&"": SubResource("AnimationLibrary_34jf3")
-}
+[node name="ui_life_animation" type="AnimationPlayer" parent="CanvasLayer/life_container" unique_id=116299570]
+libraries/ = SubResource("AnimationLibrary_34jf3")
 
-[node name="platforme_container" type="BoxContainer" parent="CanvasLayer"]
+[node name="platforme_container" type="BoxContainer" parent="CanvasLayer" unique_id=324861088]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SymbolPlatforme" type="Sprite2D" parent="CanvasLayer/platforme_container"]
+[node name="SymbolPlatforme" type="Sprite2D" parent="CanvasLayer/platforme_container" unique_id=292610012]
 visible = false
 position = Vector2(1130.0001, 626.00006)
 scale = Vector2(7, 7)
 texture = ExtResource("2_fvtld")
 
-[node name="SymbolPlatforme2" type="Sprite2D" parent="CanvasLayer/platforme_container"]
+[node name="SymbolPlatforme2" type="Sprite2D" parent="CanvasLayer/platforme_container" unique_id=851583287]
 visible = false
 position = Vector2(1095, 626)
 scale = Vector2(7, 7)
 texture = ExtResource("2_fvtld")
 
-[node name="SymbolPlatforme3" type="Sprite2D" parent="CanvasLayer/platforme_container"]
+[node name="SymbolPlatforme3" type="Sprite2D" parent="CanvasLayer/platforme_container" unique_id=722132526]
 visible = false
 position = Vector2(1060, 626)
 scale = Vector2(7, 7)
 texture = ExtResource("2_fvtld")
 
-[node name="ui_platforme_animation" type="AnimationPlayer" parent="CanvasLayer/platforme_container"]
+[node name="ui_platforme_animation" type="AnimationPlayer" parent="CanvasLayer/platforme_container" unique_id=1471099758]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_g2vtq")
-}
+libraries/ = SubResource("AnimationLibrary_g2vtq")
 
-[node name="platforme_loading_bar" type="ProgressBar" parent="CanvasLayer"]
+[node name="platforme_loading_bar" type="ProgressBar" parent="CanvasLayer" unique_id=1097475970]
+visible = false
 modulate = Color(0.8, 0.75686276, 0.6039216, 1)
 offset_left = 1048.0
 offset_top = 631.0
@@ -898,20 +951,20 @@ max_value = 4.0
 value = 4.0
 show_percentage = false
 
-[node name="progresse bar timer" type="Timer" parent="CanvasLayer"]
+[node name="progresse bar timer" type="Timer" parent="CanvasLayer" unique_id=319120052]
 wait_time = 3.0
 one_shot = true
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1728006979]
 occluder = SubResource("OccluderPolygon2D_xo3ru")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=140833448]
 position = Vector2(0, -1.1920929e-07)
 scale = Vector2(1.6444443, 1.7244443)
 energy = 0.3
 texture = ExtResource("2_hjaqi")
 
-[node name="particule_course" type="CPUParticles2D" parent="."]
+[node name="particule_course" type="CPUParticles2D" parent="." unique_id=482427229]
 position = Vector2(-1, 33)
 emitting = false
 lifetime = 0.5
@@ -922,5 +975,6 @@ gravity = Vector2(-500, -40)
 scale_amount_max = 5.0
 
 [connection signal="timeout" from="jump_timer2/jump_timer" to="." method="_on_jump_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="regen_timer" to="." method="_on_regen_timer_timeout"]
 [connection signal="area_entered" from="area" to="." method="_on_area_2d_area_entered"]

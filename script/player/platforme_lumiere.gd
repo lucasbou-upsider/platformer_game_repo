@@ -8,6 +8,7 @@ var possible_attaque = false
 @onready var point_light_2d_2: PointLight2D = $PointLight2D2
 @onready var animated_sprite: AnimatedSprite2D = $animated_sprite
 @onready var attaquearea: Area2D = $attaquearea
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 
 
@@ -50,6 +51,7 @@ func _on_remove_platforme_timeout() -> void:
 func desintegration():
 	if attaque == false:
 		is_desintegration = true
+		point_light_2d.enabled = false
 		attaquearea.set_deferred("disabled", true)
 		animated_sprite.play("fondu")
 		await get_tree().create_timer(2).timeout

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ihi33xnqqmb"]
+[gd_scene format=3 uid="uid://ihi33xnqqmb"]
 
 [ext_resource type="Script" uid="uid://c5t0lyyptsa1x" path="res://script/player/platforme_lumiere.gd" id="1_34sav"]
 [ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="2_34sav"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cnum"]
 size = Vector2(80, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byhbt"]
+size = Vector2(80, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34sav"]
 size = Vector2(45.00001, 22.000006)
@@ -210,31 +213,36 @@ gradient = SubResource("Gradient_wq51a")
 fill_from = Vector2(0.63793105, 0.004310345)
 fill_to = Vector2(0.15948276, 0)
 
-[node name="platforme_lumiere_vericale" type="RigidBody2D"]
+[node name="platforme_lumiere_vericale" type="RigidBody2D" unique_id=1657108364]
 rotation = 1.5707964
 script = ExtResource("1_34sav")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1759795753]
 shape = SubResource("RectangleShape2D_8cnum")
 
-[node name="Area2D" type="Area2D" parent="." groups=["platforme"]]
+[node name="detectionattaquearea" type="Area2D" parent="." unique_id=966169060]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="detectionattaquearea" unique_id=1938336293]
+shape = SubResource("RectangleShape2D_byhbt")
+
+[node name="attaquearea" type="Area2D" parent="." unique_id=1751746825 groups=["platforme"]]
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attaquearea" unique_id=369599898]
 position = Vector2(22.499996, -1.5993945e-06)
 scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_34sav")
 
-[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
+[node name="animated_sprite" type="AnimatedSprite2D" parent="." unique_id=1632144696]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vco83")
 offset = Vector2(0, 2.5)
 
-[node name="remove_platforme" type="Timer" parent="."]
+[node name="remove_platforme" type="Timer" parent="." unique_id=2063701112]
 wait_time = 3.0
 one_shot = true
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1806108175]
 visible = false
 position = Vector2(404.01437, -0.26008165)
 scale = Vector2(13.863992, 0.38713998)
@@ -242,12 +250,13 @@ energy = 0.6
 texture = SubResource("GradientTexture2D_34sav")
 height = 35.0
 
-[node name="PointLight2D3" type="PointLight2D" parent="."]
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1984419512]
 position = Vector2(0, -9.536743e-07)
 rotation = 1.5707964
 scale = Vector2(0.45146, 0.5436844)
 energy = 0.3
 texture = ExtResource("3_byhbt")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="detectionattaquearea" to="." method="_on_detectionattaquearea_area_entered"]
+[connection signal="area_entered" from="attaquearea" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="remove_platforme" to="." method="_on_remove_platforme_timeout"]
