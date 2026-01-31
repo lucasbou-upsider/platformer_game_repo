@@ -250,7 +250,7 @@ energy = 0.6
 texture = SubResource("GradientTexture2D_34sav")
 height = 35.0
 
-[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1984419512]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1984419512]
 position = Vector2(0, -9.536743e-07)
 rotation = 1.5707964
 scale = Vector2(0.45146, 0.5436844)
