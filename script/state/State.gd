@@ -1,7 +1,6 @@
 extends Node
 class_name state
 
-signal Trantitioned
 
 func enter():
 	pass
