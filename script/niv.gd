@@ -13,7 +13,6 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	
 	#placage de platforme
 	if CollectibleManager.unlock_platforme == true and timer_start == false:
 		if Input.is_action_just_pressed("platforme"):
@@ -37,7 +36,6 @@ func _process(_delta: float) -> void:
 	
 	#timer reload platforme
 	progress_bar.value = platforme_timer.wait_time - platforme_timer.time_left 
-
 
 
 #ajouter les platformes

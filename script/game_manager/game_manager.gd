@@ -11,8 +11,13 @@ var position_camera: Vector2
 #quand le joueur est en train de se regen
 var player_in_regen = false
 
+
+#quand le joueuer est en burst
+var player_in_burst = true
 #savoir quand le joueur peux burst
-var player_burst = 0
+var if_player_burst = false
+#le burst equipe en ce moment
+var burst_equip: String = "long_time"
 
 #resaparition au poit de spawn
 var respawn_point: Vector2 = Vector2(0 , 0 )

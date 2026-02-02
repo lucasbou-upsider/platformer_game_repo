@@ -210,23 +210,16 @@ func mort():
 #quand le joueur perd des pv
 func degats(veloctiyennemie):
 	#si le joueur prends un degat pendant la regeneration
-
-
 	if GameManager.player_in_regen == true:
 		regen_timer.stop()
 		GameManager.player_in_regen = false
 		GameManager.zoom_camera = Vector2(0.75, 0.75)
 	hit = true
-	#position.y -= 20
-	#if velocity.x > 0:
-		#position.x -= 20
-	#elif velocity.x < 0:
-		#position.x += 20
 	
 	collision_area.set_deferred("disabled", true) 
 	pv -=1
 	if pv != 0:
-		var kb_direction = (veloctiyennemie - velocity ).normalized() * Vector2(2000,1)
+		var kb_direction = (veloctiyennemie - velocity ).normalized() * Vector2(2000,1) #knockback du joueur
 		velocity = kb_direction
 		velocity.y -= 400
 		#await get_tree().create_timer(0.5).timeout
@@ -275,5 +268,7 @@ func platforme_reload():
 #degats
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	if _area.is_in_group("ennemie"):
-		degats(_area.get_parent().velocity)
-	
+		if _area.get_parent() is CharacterBody2D:
+			degats(_area.get_parent().velocity)
+		else:
+			degats(Vector2(0,0))

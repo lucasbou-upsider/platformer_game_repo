@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://drhrculk4rqm5"]
+[gd_scene format=3 uid="uid://drhrculk4rqm5"]
 
 [ext_resource type="Script" uid="uid://c5t0lyyptsa1x" path="res://script/player/platforme_lumiere.gd" id="1_ordyb"]
 [ext_resource type="Texture2D" uid="uid://bwm5g1lokllqn" path="res://sprite/player/platforme.png" id="2_pg2b5"]
@@ -231,35 +231,34 @@ gradient = SubResource("Gradient_wq51a")
 fill_from = Vector2(0.45689654, 0.34051725)
 fill_to = Vector2(0.45689654, 0)
 
-[node name="platforme_lumiere_horizontale" type="RigidBody2D"]
+[node name="platforme_lumiere_horizontale" type="RigidBody2D" unique_id=152246292]
 script = ExtResource("1_ordyb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["platforme"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1098461370 groups=["platforme"]]
 shape = SubResource("RectangleShape2D_8cnum")
 
-[node name="detectionattaquearea" type="Area2D" parent="."]
+[node name="detectionattaquearea" type="Area2D" parent="." unique_id=137567299]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="detectionattaquearea"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="detectionattaquearea" unique_id=712017497]
 shape = SubResource("RectangleShape2D_8cnum")
 
-[node name="attaquearea" type="Area2D" parent="." groups=["platforme"]]
+[node name="attaquearea" type="Area2D" parent="." unique_id=1301136992 groups=["platforme"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attaquearea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attaquearea" unique_id=2063688177]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_pg2b5")
 
-[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.54509807)
+[node name="animated_sprite" type="AnimatedSprite2D" parent="." unique_id=412009488]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kps8w")
-animation = &"fondu"
+animation = &"attaque"
 offset = Vector2(0, 2.5)
 
-[node name="remove_platforme" type="Timer" parent="."]
+[node name="remove_platforme" type="Timer" parent="." unique_id=234270372]
 wait_time = 3.0
 one_shot = true
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1322933417]
 visible = false
 position = Vector2(9.536743e-07, 518.00006)
 scale = Vector2(1.25, 16.593752)
@@ -267,7 +266,7 @@ energy = 0.6
 texture = SubResource("GradientTexture2D_pg2b5")
 height = 35.0
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1648768454]
 position = Vector2(0, 9.536743e-07)
 scale = Vector2(0.5777778, 0.29333332)
 energy = 0.3

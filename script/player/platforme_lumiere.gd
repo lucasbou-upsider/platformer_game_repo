@@ -16,6 +16,13 @@ func _ready() -> void:
 	animated_sprite.play("default")
 	freeze = true
 	lock_rotation = true
+	if GameManager.burst_equip == "long_time" and GameManager.player_in_burst == true:
+		print("burst !")
+		GameManager.player_in_burst = false
+		animated_sprite.self_modulate = Color(0.0, 0.0, 1.0)
+		remove_platforme.wait_time = 6.0
+	else:
+		remove_platforme.wait_time = 3.0
 	remove_platforme.start()
 
 func _process(_delta: float) -> void:
@@ -44,6 +51,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			await get_tree().create_timer(0.4).timeout
 			queue_free()
 
+#supprimer la platforme
 func _on_remove_platforme_timeout() -> void:
 	queue_free()
 
@@ -75,3 +83,6 @@ func _on_detectionattaquearea_area_entered(area: Area2D) -> void:
 func _on_attaquearea_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Detectionattaque"):
 		possible_attaque = false
+
+func degats():
+	pass
