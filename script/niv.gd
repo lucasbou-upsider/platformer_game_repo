@@ -9,7 +9,7 @@ var timer_start = false
 @onready var platforme_marker: Sprite2D = $platforme_marker
 
 func _ready() -> void:
-	pass
+	platforme_timer.wait_time = 4.0
 
 
 func _process(_delta: float) -> void:
@@ -33,6 +33,10 @@ func _process(_delta: float) -> void:
 			GameManager.orientation_platforme = "verticale"
 		elif GameManager.orientation_platforme == "verticale":
 			GameManager.orientation_platforme = "horizontale"
+	
+	if GameManager.if_player_burst == true and Input.is_action_just_pressed("burst"):
+		platforme_timer.wait_time = 8.0
+
 	
 	#timer reload platforme
 	progress_bar.value = platforme_timer.wait_time - platforme_timer.time_left 

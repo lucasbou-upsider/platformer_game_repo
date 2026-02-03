@@ -123,6 +123,13 @@ func _physics_process(delta: float) -> void:
 	if GameManager.player_in_regen == true:
 		GameManager.zoom_camera += Vector2(0.00015, 0.00015)
 
+	#burst
+	if GameManager.if_player_burst == true and Input.is_action_just_pressed("burst") and GameManager.nbr_platforme == 3:
+		GameManager.player_in_burst = true
+
+
+
+
 	move_and_slide()
 
 #affichage de la vie du joueur

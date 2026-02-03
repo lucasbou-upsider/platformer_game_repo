@@ -20,7 +20,7 @@ func _ready() -> void:
 		print("burst !")
 		GameManager.player_in_burst = false
 		animated_sprite.self_modulate = Color(0.0, 0.0, 1.0)
-		remove_platforme.wait_time = 6.0
+		remove_platforme.wait_time =4.5
 	else:
 		remove_platforme.wait_time = 3.0
 	remove_platforme.start()
@@ -43,8 +43,15 @@ func _process(_delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if attaque == true:
-		if area.is_in_group("player") or area.is_in_group("ennemie"):
+		if area.is_in_group("ennemie"):
 			area.get_parent().degats()
+			set_deferred("freeze", true)
+			animated_sprite.play("explosion")
+			attaquearea.set_deferred("disabled", true)
+			await get_tree().create_timer(0.4).timeout
+			queue_free()
+		elif area.is_in_group("player"):
+			area.get_parent().degats(linear_velocity)
 			set_deferred("freeze", true)
 			animated_sprite.play("explosion")
 			attaquearea.set_deferred("disabled", true)

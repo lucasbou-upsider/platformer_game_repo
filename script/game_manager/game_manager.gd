@@ -13,9 +13,9 @@ var player_in_regen = false
 
 
 #quand le joueuer est en burst
-var player_in_burst = true
+var player_in_burst = false
 #savoir quand le joueur peux burst
-var if_player_burst = false
+var if_player_burst = true
 #le burst equipe en ce moment
 var burst_equip: String = "long_time"
 
