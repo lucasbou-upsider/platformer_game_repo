@@ -1308,7 +1308,7 @@ position = Vector2(6113, 1338)
 shape = SubResource("RectangleShape2D_jv7vk")
 
 [node name="player" parent="." unique_id=760791334 instance=ExtResource("10_umd54")]
-position = Vector2(2396, 1936)
+position = Vector2(2343, 1892)
 deceleration = 0.5
 aceleration = 0.5
 

@@ -16,7 +16,7 @@ var hit = false
 
 #platforme
 @onready var ui_platforme_animation: AnimationPlayer = $CanvasLayer/platforme_container/ui_platforme_animation #ui qui montre le nombre de platforme restant au joueur
-@onready var progress_bar: ProgressBar = $CanvasLayer/platforme_loading_bar #barre de rechargement de platforme
+@onready var platforme_loading_bar: ProgressBar = $CanvasLayer/platforme_loading_bar #barre de rechargement de platforme
 @onready var progresse_bar_timer: Timer = $"CanvasLayer/progresse bar timer"# le temps que prends les platfromes à se recharger
 
 #vitesse
@@ -52,6 +52,11 @@ var dash_key_pressed = 0 #savoir si la touche de dash à été préssé
 var is_dashing = false #savoir si le joueur dash
 var nbr_dash = 1 #savoir le nbr de dahs restant au joueur
 
+#effect
+@onready var flash: ColorRect = $CanvasLayer/effect/ColorRect
+@onready var animationeffect: AnimationPlayer = $CanvasLayer/effect/Animationeffect
+
+
 func _ready() -> void:
 	pass
 
@@ -79,13 +84,14 @@ func _physics_process(delta: float) -> void:
 	
 	#savoir la position du joueur
 	GameManager.position_player = global_position
-	
+
 	#coyote time
 	if is_on_floor() and can_jump == false and is_dashing == false:
 		can_jump = true
 	elif can_jump == true and jump_timer.is_stopped():
 		jump_timer.start(coyote_time)
 		
+
 	#jump buffering 
 	if Input.is_action_just_pressed("saut") and can_jump == false and is_dashing == false:
 		jump_buffering_timer.start()
@@ -124,9 +130,10 @@ func _physics_process(delta: float) -> void:
 		GameManager.zoom_camera += Vector2(0.00015, 0.00015)
 
 	#burst
-	if GameManager.if_player_burst == true and Input.is_action_just_pressed("burst") and GameManager.nbr_platforme == 3:
+	if GameManager.if_player_burst == true and Input.is_action_just_pressed("burst") and GameManager.nbr_platforme == 3 and GameManager.player_in_burst == false:
+		GameManager.camera_shake_func(30, 10)
 		GameManager.player_in_burst = true
-
+		GameManager.timer_loading_platforme = 8.0
 
 
 
@@ -227,6 +234,7 @@ func degats(veloctiyennemie):
 	pv -=1
 	if pv != 0:
 		var kb_direction = (veloctiyennemie - velocity ).normalized() * Vector2(2000,1) #knockback du joueur
+		GameManager.camera_shake_func(30, 30)
 		velocity = kb_direction
 		velocity.y -= 400
 		#await get_tree().create_timer(0.5).timeout
@@ -269,8 +277,11 @@ func ui_platforme():
 #permet de recevoi les platforme a la fin du timer
 func platforme_reload():
 	if GameManager.nbr_platforme == 0:
+		progresse_bar_timer.wait_time = GameManager.timer_loading_platforme
+		platforme_loading_bar.max_value = progresse_bar_timer.wait_time
 		progresse_bar_timer.start()
-		progress_bar.value = progresse_bar_timer.wait_time
+		platforme_loading_bar.value = progresse_bar_timer.wait_time
+
 
 #degats
 func _on_area_2d_area_entered(_area: Area2D) -> void:

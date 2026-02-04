@@ -4,7 +4,9 @@ extends Camera2D
 var resetzoom: Vector2
 var decallage = 15
 var negatif_decallage = -20
+#camera
 
+var _shake_strength: float = 0.0
 
 
 func _ready() -> void:
@@ -29,6 +31,28 @@ func _process(_delta: float) -> void:
 						GameManager.position_camera = GameManager.position_player + Vector2(negatif_decallage , -300)
 					elif Input.is_action_pressed("regarder_bas"):
 						GameManager.position_camera = GameManager.position_player + Vector2(negatif_decallage , 300)
-
 	zoom = GameManager.zoom_camera
 	global_position = GameManager.position_camera
+
+
+
+##tremblement de caméra##
+	if _shake_strength > 0:
+		_shake_strength = lerpf(_shake_strength, 0, GameManager.shake_fade * _delta)
+		offset = rando_offset()
+	if GameManager.camera_shake == true:
+		shake()
+
+
+
+
+func shake():
+	print("camera shake")
+	_shake_strength = GameManager.rando_streng
+	GameManager.camera_shake = false
+	
+func rando_offset():
+	return Vector2(
+		randf_range(-_shake_strength, _shake_strength),
+		randf_range(-_shake_strength, _shake_strength)
+	)

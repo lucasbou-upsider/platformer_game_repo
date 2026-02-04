@@ -23,6 +23,7 @@ func _process(_delta: float) -> void:
 					inst_platforme_verticale(get_global_mouse_position())
 				GameManager.nbr_platforme -= 1
 		if GameManager.nbr_platforme == 0 and GameManager.player_in_regen == false:
+			print("en rechargement")
 			platforme_timer.start()
 			timer_start = true
 			progress_bar.visible = true
@@ -34,9 +35,12 @@ func _process(_delta: float) -> void:
 		elif GameManager.orientation_platforme == "verticale":
 			GameManager.orientation_platforme = "horizontale"
 	
+	#burst 
 	if GameManager.if_player_burst == true and Input.is_action_just_pressed("burst"):
-		platforme_timer.wait_time = 8.0
+		GameManager.timer_loading_platforme = 8.0
 
+	#bien mettre à jour la barre de chargement du regen
+	platforme_timer.wait_time = GameManager.timer_loading_platforme
 	
 	#timer reload platforme
 	progress_bar.value = platforme_timer.wait_time - platforme_timer.time_left 
@@ -58,3 +62,4 @@ func _on_platforme_timer_timeout() -> void:
 	progress_bar.visible = false
 	GameManager.nbr_platforme = 3
 	timer_start = false
+	GameManager.timer_loading_platforme = 4.0

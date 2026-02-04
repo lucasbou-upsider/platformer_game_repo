@@ -835,6 +835,68 @@ _data = {
 &"RESET": SubResource("Animation_hp4bs")
 }
 
+[sub_resource type="Animation" id="Animation_ajqqa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rkmeh"]
+resource_name = "flash"
+length = 0.3
+step = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.28),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.4392157), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_732fb"]
+_data = {
+&"RESET": SubResource("Animation_ajqqa"),
+&"flash": SubResource("Animation_rkmeh")
+}
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xo3ru"]
 polygon = PackedVector2Array(20, -31, 20, 31, -20, 31, -20, -31)
 
@@ -939,6 +1001,23 @@ texture = ExtResource("2_fvtld")
 [node name="ui_platforme_animation" type="AnimationPlayer" parent="CanvasLayer/platforme_container" unique_id=1471099758]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_g2vtq")
+
+[node name="effect" type="Control" parent="CanvasLayer" unique_id=1654507888]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/effect" unique_id=450792680]
+layout_mode = 0
+offset_left = -105.0
+offset_top = -35.0
+offset_right = 1162.0
+offset_bottom = 718.0
+
+[node name="Animationeffect" type="AnimationPlayer" parent="CanvasLayer/effect" unique_id=796944040]
+libraries/ = SubResource("AnimationLibrary_732fb")
 
 [node name="platforme_loading_bar" type="ProgressBar" parent="CanvasLayer" unique_id=1097475970]
 visible = false

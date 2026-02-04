@@ -1,6 +1,6 @@
 extends Node
 
-var nbr_platforme = 0
+var nbr_platforme = 3
 var orientation_platforme = "horizontale"
 
 #camera
@@ -10,6 +10,8 @@ var position_camera: Vector2
 
 #quand le joueur est en train de se regen
 var player_in_regen = false
+#le temps que prends le joueur pour se regen
+var timer_loading_platforme = 4.0
 
 
 #quand le joueuer est en burst
@@ -31,6 +33,16 @@ var position_player: Vector2 = Vector2(0, 0)
 #la scene par laquelle le joueur viens de sortir
 var scene 
 
+#camera shake
+var camera_shake = false
+@export var shake_fade: float = 0
+@export var rando_streng = 0
+func camera_shake_func(shake_fade1: float,rando_streng1: float):
+	print("shake !")
+	shake_fade = shake_fade1
+	rando_streng = rando_streng1
+	camera_shake = true
+	
 
 #freeze
 func framefreeze(timeScale: float, duration: float):
